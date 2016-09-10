@@ -7,9 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8454DB781D8467F70012B040 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454DB771D8467F70012B040 /* CurrentUser.swift */; };
+		8454DB7A1D8468290012B040 /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454DB791D8468290012B040 /* UtilityFunctions.swift */; };
+		8454DB7C1D84684E0012B040 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454DB7B1D84684E0012B040 /* SignInViewController.swift */; };
+		8454DB7F1D8468720012B040 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454DB7D1D8468720012B040 /* AppDelegate.swift */; };
+		8454DB801D8468720012B040 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454DB7E1D8468720012B040 /* MainViewController.swift */; };
+		8454DB841D8468BF0012B040 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454DB811D8468BF0012B040 /* Launch Screen.storyboard */; };
+		8454DB851D8468BF0012B040 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454DB821D8468BF0012B040 /* Main.storyboard */; };
+		8454DB861D8468BF0012B040 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454DB831D8468BF0012B040 /* SignIn.storyboard */; };
 		E7A30F040A6338E800000000 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E2985F9578D00000000 /* AddressBook.framework */; };
 		E7A30F0418F3C7E400000000 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E29EBE4B59D00000000 /* Foundation.framework */; };
-		E7A30F041BDCC13800000000 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DD70E29ABEABC0B00000000 /* Main.storyboard */; };
 		E7A30F041DDD363000000000 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E2986DE25E300000000 /* GoogleUtilities.framework */; };
 		E7A30F041E09C3EE00000000 /* AppAnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD70E292936D81500000000 /* AppAnalyticsViewController.swift */; };
 		E7A30F0430081BCA00000000 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E29C57E323D00000000 /* MediaPlayer.framework */; };
@@ -19,13 +26,11 @@
 		E7A30F04463D233200000000 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E29CD280E9900000000 /* SystemConfiguration.framework */; };
 		E7A30F044BEACB9F00000000 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD70E2933B89EEA00000000 /* News.swift */; };
 		E7A30F04502D0A5700000000 /* ContentDelivery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DD70E296EC9A7FF00000000 /* ContentDelivery.storyboard */; };
-		E7A30F04524041A800000000 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD70E298F60339100000000 /* AppDelegate.swift */; };
 		E7A30F0452C76AD000000000 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DD70E29D11FD16F00000000 /* Images.xcassets */; };
 		E7A30F0452EA7E1300000000 /* UserDataStorage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DD70E29FEDB666C00000000 /* UserDataStorage.storyboard */; };
 		E7A30F0454C321AF00000000 /* GoogleAuthUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E29C2395C7300000000 /* GoogleAuthUtilities.framework */; };
 		E7A30F045C382A5700000000 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E29E191011300000000 /* Security.framework */; };
 		E7A30F045D14ABCE00000000 /* NewsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD70E29B3B6377F00000000 /* NewsTable.swift */; };
-		E7A30F045EA35C7700000000 /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD70E294C9B311A00000000 /* UtilityFunctions.swift */; };
 		E7A30F045FBA873300000000 /* GoogleSymbolUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E291663CB1300000000 /* GoogleSymbolUtilities.framework */; };
 		E7A30F045FD6017C00000000 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E29ED26438200000000 /* libsqlite3.tbd */; };
 		E7A30F045FD83CF100000000 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E29EA64BE7700000000 /* SafariServices.framework */; };
@@ -33,19 +38,15 @@
 		E7A30F046582389400000000 /* NoSQLTableFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD70E291A3272C300000000 /* NoSQLTableFactory.swift */; };
 		E7A30F0465C1F7EB00000000 /* NoSQLTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD70E29E507C82500000000 /* NoSQLTableViewController.swift */; };
 		E7A30F046A4D1FEB00000000 /* UserIdentityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD70E292A74B19900000000 /* UserIdentityViewController.swift */; };
-		E7A30F046EE8348F00000000 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD70E29D2DCAB7D00000000 /* MainViewController.swift */; };
 		E7A30F04728B05FE00000000 /* AWSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E296270FF2700000000 /* AWSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E7A30F04728B05FE00000001 /* AWSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E296270FF2700000000 /* AWSCore.framework */; };
 		E7A30F0474A10E1800000000 /* UserSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DD70E295A6B899A00000000 /* UserSettings.storyboard */; };
 		E7A30F047CE07CEF00000000 /* AWSS3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E29EB9CE93500000000 /* AWSS3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E7A30F047CE07CEF00000001 /* AWSS3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E29EB9CE93500000000 /* AWSS3.framework */; };
-		E7A30F04800C6C6800000000 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DD70E299598440800000000 /* SignIn.storyboard */; };
-		E7A30F04866CEF5600000000 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DD70E2954C05ADF00000000 /* Launch Screen.storyboard */; };
 		E7A30F048C5BAFF900000000 /* UserDataStorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD70E2922DF1E3C00000000 /* UserDataStorageViewController.swift */; };
 		E7A30F049C1F4C5900000000 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E29363F4E1300000000 /* UIKit.framework */; };
 		E7A30F049E1C688E00000000 /* CloudLogic.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DD70E299C7D726F00000000 /* CloudLogic.storyboard */; };
 		E7A30F04A39A207B00000000 /* GoogleNetworkingUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E29CEC7F98B00000000 /* GoogleNetworkingUtilities.framework */; };
-		E7A30F04A49EDFC500000000 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD70E29A30BD02000000000 /* SignInViewController.swift */; };
 		E7A30F04A636DCED00000000 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E29A767128C00000000 /* libz.tbd */; };
 		E7A30F04AD63E99000000000 /* DemoFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD70E29C407B76900000000 /* DemoFeature.swift */; };
 		E7A30F04B1557EA000000000 /* AWSDynamoDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E29B05D356500000000 /* AWSDynamoDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -108,8 +109,6 @@
 		1DD70E2933B89EEA00000000 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = News.swift; path = MySampleApp/AmazonAws/Models/NoSQL/News.swift; sourceTree = SOURCE_ROOT; };
 		1DD70E29354D15F300000000 /* AWSCognito.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCognito.framework; path = MySampleApp/Sdk/Aws/extras/AWSCognito.framework; sourceTree = "<group>"; };
 		1DD70E29363F4E1300000000 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		1DD70E294C9B311A00000000 /* UtilityFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UtilityFunctions.swift; path = MySampleApp/App/Utility/UtilityFunctions.swift; sourceTree = SOURCE_ROOT; };
-		1DD70E2954C05ADF00000000 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "MySampleApp/App/Launch Screen.storyboard"; sourceTree = SOURCE_ROOT; };
 		1DD70E295A6B899A00000000 /* UserSettings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = UserSettings.storyboard; path = MySampleApp/Demo/UserSettings/UserSettings.storyboard; sourceTree = SOURCE_ROOT; };
 		1DD70E295DFC29FC00000000 /* Meetology.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = Meetology.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DD70E296270FF2700000000 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = MySampleApp/Sdk/Aws/AWSCore.framework; sourceTree = "<group>"; };
@@ -120,15 +119,11 @@
 		1DD70E2985F9578D00000000 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		1DD70E2986DE25E300000000 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = MySampleApp/Sdk/Google/GoogleUtilities.framework; sourceTree = "<group>"; };
 		1DD70E2988758B0900000000 /* NoSQLTableListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoSQLTableListViewController.swift; path = MySampleApp/Demo/NoSQL/NoSQLTableListViewController.swift; sourceTree = SOURCE_ROOT; };
-		1DD70E298F60339100000000 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = MySampleApp/App/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
-		1DD70E299598440800000000 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = SignIn.storyboard; path = MySampleApp/App/SignIn/SignIn.storyboard; sourceTree = SOURCE_ROOT; };
 		1DD70E299C7D726F00000000 /* CloudLogic.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = CloudLogic.storyboard; path = MySampleApp/Demo/CloudLogic/CloudLogic.storyboard; sourceTree = SOURCE_ROOT; };
 		1DD70E299E083A6700000000 /* NoSQLQueryResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoSQLQueryResultViewController.swift; path = MySampleApp/Demo/NoSQL/NoSQLQueryResultViewController.swift; sourceTree = SOURCE_ROOT; };
 		1DD70E299F10774500000000 /* NoSQLDatabase.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = NoSQLDatabase.storyboard; path = MySampleApp/Demo/NoSQL/NoSQLDatabase.storyboard; sourceTree = SOURCE_ROOT; };
-		1DD70E29A30BD02000000000 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = MySampleApp/App/SignIn/SignInViewController.swift; sourceTree = SOURCE_ROOT; };
 		1DD70E29A767128C00000000 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		1DD70E29AA95F20900000000 /* ContentDeliveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentDeliveryViewController.swift; path = MySampleApp/Demo/ContentDelivery/ContentDeliveryViewController.swift; sourceTree = SOURCE_ROOT; };
-		1DD70E29ABEABC0B00000000 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Main.storyboard; path = MySampleApp/App/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		1DD70E29B05D356500000000 /* AWSDynamoDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSDynamoDB.framework; path = MySampleApp/Sdk/Aws/AWSDynamoDB.framework; sourceTree = "<group>"; };
 		1DD70E29B3B6377F00000000 /* NewsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewsTable.swift; path = MySampleApp/Demo/NoSQL/NewsTable.swift; sourceTree = SOURCE_ROOT; };
 		1DD70E29B8F8AECE00000000 /* UserSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserSettingsViewController.swift; path = MySampleApp/Demo/UserSettings/UserSettingsViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -140,7 +135,6 @@
 		1DD70E29CD280E9900000000 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		1DD70E29CEC7F98B00000000 /* GoogleNetworkingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleNetworkingUtilities.framework; path = MySampleApp/Sdk/Google/GoogleNetworkingUtilities.framework; sourceTree = "<group>"; };
 		1DD70E29D11FD16F00000000 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MySampleApp/App/Images.xcassets; sourceTree = SOURCE_ROOT; };
-		1DD70E29D2DCAB7D00000000 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = MySampleApp/App/MainViewController.swift; sourceTree = SOURCE_ROOT; };
 		1DD70E29DF74086C00000000 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = MySampleApp/Sdk/Facebook/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		1DD70E29E191011300000000 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		1DD70E29E507C82500000000 /* NoSQLTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NoSQLTableViewController.swift; path = MySampleApp/Demo/NoSQL/NoSQLTableViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -153,6 +147,14 @@
 		1DD70E29F321B82A00000000 /* UserFiles.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = UserFiles.storyboard; path = MySampleApp/Demo/UserFiles/UserFiles.storyboard; sourceTree = SOURCE_ROOT; };
 		1DD70E29F3436DA800000000 /* AWSMobileHubHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSMobileHubHelper.framework; path = MySampleApp/AmazonAws/AWSMobileHubHelper.framework; sourceTree = "<group>"; };
 		1DD70E29FEDB666C00000000 /* UserDataStorage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = UserDataStorage.storyboard; path = MySampleApp/Demo/UserDataStorage/UserDataStorage.storyboard; sourceTree = SOURCE_ROOT; };
+		8454DB771D8467F70012B040 /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CurrentUser.swift; path = MySampleApp/Code/CurrentUser.swift; sourceTree = SOURCE_ROOT; };
+		8454DB791D8468290012B040 /* UtilityFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UtilityFunctions.swift; path = MySampleApp/Code/UtilityFunctions.swift; sourceTree = SOURCE_ROOT; };
+		8454DB7B1D84684E0012B040 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = MySampleApp/Code/SignInViewController.swift; sourceTree = SOURCE_ROOT; };
+		8454DB7D1D8468720012B040 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = MySampleApp/Code/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		8454DB7E1D8468720012B040 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = MySampleApp/Code/MainViewController.swift; sourceTree = SOURCE_ROOT; };
+		8454DB811D8468BF0012B040 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "MySampleApp/Storyboards/Launch Screen.storyboard"; sourceTree = SOURCE_ROOT; };
+		8454DB821D8468BF0012B040 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = MySampleApp/Storyboards/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		8454DB831D8468BF0012B040 /* SignIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SignIn.storyboard; path = MySampleApp/Storyboards/SignIn.storyboard; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,17 +272,18 @@
 			isa = PBXGroup;
 			children = (
 				8454DB701D84650C0012B040 /* Classes */,
-				1DD70E298F60339100000000 /* AppDelegate.swift */,
+				8454DB791D8468290012B040 /* UtilityFunctions.swift */,
 				1DD70E29F28F096100000000 /* AWSMobileClient.swift */,
+				8454DB771D8467F70012B040 /* CurrentUser.swift */,
+				8454DB7D1D8468720012B040 /* AppDelegate.swift */,
+				8454DB7E1D8468720012B040 /* MainViewController.swift */,
 				1DD70E2933B89EEA00000000 /* News.swift */,
+				8454DB811D8468BF0012B040 /* Launch Screen.storyboard */,
+				8454DB821D8468BF0012B040 /* Main.storyboard */,
+				8454DB831D8468BF0012B040 /* SignIn.storyboard */,
 				1DD70E29D11FD16F00000000 /* Images.xcassets */,
-				1DD70E2954C05ADF00000000 /* Launch Screen.storyboard */,
-				1DD70E29ABEABC0B00000000 /* Main.storyboard */,
-				1DD70E29D2DCAB7D00000000 /* MainViewController.swift */,
-				1DD70E299598440800000000 /* SignIn.storyboard */,
-				1DD70E29A30BD02000000000 /* SignInViewController.swift */,
+				8454DB7B1D84684E0012B040 /* SignInViewController.swift */,
 				1DD70E291449014E00000000 /* Info.plist */,
-				1DD70E294C9B311A00000000 /* UtilityFunctions.swift */,
 				B401C979A0BA445B00000000 /* Demo */,
 			);
 			name = Meetology;
@@ -426,18 +429,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7A30F04800C6C6800000000 /* SignIn.storyboard in Resources */,
 				E7A30F04C256E21600000000 /* AppAnalytics.storyboard in Resources */,
 				E7A30F0474A10E1800000000 /* UserSettings.storyboard in Resources */,
 				E7A30F049E1C688E00000000 /* CloudLogic.storyboard in Resources */,
 				E7A30F04DE2A9B1B00000000 /* UserIdentity.storyboard in Resources */,
+				8454DB861D8468BF0012B040 /* SignIn.storyboard in Resources */,
 				E7A30F04E82BACCF00000000 /* NoSQLDatabase.storyboard in Resources */,
+				8454DB851D8468BF0012B040 /* Main.storyboard in Resources */,
 				E7A30F04502D0A5700000000 /* ContentDelivery.storyboard in Resources */,
 				E7A30F0452EA7E1300000000 /* UserDataStorage.storyboard in Resources */,
-				E7A30F04866CEF5600000000 /* Launch Screen.storyboard in Resources */,
 				E7A30F0452C76AD000000000 /* Images.xcassets in Resources */,
+				8454DB841D8468BF0012B040 /* Launch Screen.storyboard in Resources */,
 				E7A30F04C9E63EF800000000 /* UserFiles.storyboard in Resources */,
-				E7A30F041BDCC13800000000 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,27 +480,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8454DB7F1D8468720012B040 /* AppDelegate.swift in Sources */,
+				8454DB801D8468720012B040 /* MainViewController.swift in Sources */,
 				E7A30F04F14F485100000000 /* ContentDeliveryViewController.swift in Sources */,
 				E7A30F04E66AAB2E00000000 /* UserFilesViewController.swift in Sources */,
 				E7A30F04D72FE5D100000000 /* NoSQLTableListViewController.swift in Sources */,
 				E7A30F046582389400000000 /* NoSQLTableFactory.swift in Sources */,
-				E7A30F04524041A800000000 /* AppDelegate.swift in Sources */,
 				E7A30F045D14ABCE00000000 /* NewsTable.swift in Sources */,
 				E7A30F048C5BAFF900000000 /* UserDataStorageViewController.swift in Sources */,
 				E7A30F044BEACB9F00000000 /* News.swift in Sources */,
 				E7A30F04AD63E99000000000 /* DemoFeature.swift in Sources */,
 				E7A30F046392F5E800000000 /* ColorThemeSettings.swift in Sources */,
 				E7A30F04CA62FAF700000000 /* NoSQLSampleDataGenerator.swift in Sources */,
-				E7A30F045EA35C7700000000 /* UtilityFunctions.swift in Sources */,
 				E7A30F0465C1F7EB00000000 /* NoSQLTableViewController.swift in Sources */,
-				E7A30F046EE8348F00000000 /* MainViewController.swift in Sources */,
 				E7A30F041E09C3EE00000000 /* AppAnalyticsViewController.swift in Sources */,
 				E7A30F04D2C443A100000000 /* NoSQLQueryResultViewController.swift in Sources */,
-				E7A30F04A49EDFC500000000 /* SignInViewController.swift in Sources */,
 				E7A30F04F7831A1300000000 /* UserSettingsViewController.swift in Sources */,
+				8454DB7A1D8468290012B040 /* UtilityFunctions.swift in Sources */,
 				E7A30F04D1D7EE7E00000000 /* CloudLogicViewController.swift in Sources */,
 				E7A30F043A3A403000000000 /* NoSQLModelHelpers.swift in Sources */,
 				E7A30F046A4D1FEB00000000 /* UserIdentityViewController.swift in Sources */,
+				8454DB781D8467F70012B040 /* CurrentUser.swift in Sources */,
+				8454DB7C1D84684E0012B040 /* SignInViewController.swift in Sources */,
 				E7A30F04D2ADFBF600000000 /* AWSMobileClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

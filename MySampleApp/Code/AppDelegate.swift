@@ -18,10 +18,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
+    let currentUser: CurrentUser = CurrentUser.sharedInstance
+    
+    func setLoggedInViewController() {
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let initialViewController = storyboard.instantiateViewControllerWithIdentifier("LoggedInViewController")
+        self.window?.rootViewController = initialViewController
+        self.window?.makeKeyAndVisible()
+    }
+    
+    func setLogInViewController() {
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        let storyboard = UIStoryboard(name: "LogInAndSignUp", bundle: nil)
+        let initialViewController = storyboard.instantiateViewControllerWithIdentifier("LogInAndSignUpViewController")
+        self.window?.rootViewController = initialViewController
+        self.window?.makeKeyAndVisible()
+    }
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        return AWSMobileClient.sharedInstance.didFinishLaunching(application, withOptions: launchOptions)
+        let didFinishLaunching = AWSMobileClient.sharedInstance.didFinishLaunching(application, withOptions: launchOptions)
+        
+//        if currentUser.loggedIn() {
+//            setLoggedInViewController()
+//        } else {
+//            setLogInViewController()
+//        }
+        
+        
+        
+        return didFinishLaunching
     }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
