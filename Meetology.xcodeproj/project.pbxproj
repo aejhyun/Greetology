@@ -111,7 +111,7 @@
 		1DD70E294C9B311A00000000 /* UtilityFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UtilityFunctions.swift; path = MySampleApp/App/Utility/UtilityFunctions.swift; sourceTree = SOURCE_ROOT; };
 		1DD70E2954C05ADF00000000 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "MySampleApp/App/Launch Screen.storyboard"; sourceTree = SOURCE_ROOT; };
 		1DD70E295A6B899A00000000 /* UserSettings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = UserSettings.storyboard; path = MySampleApp/Demo/UserSettings/UserSettings.storyboard; sourceTree = SOURCE_ROOT; };
-		1DD70E295DFC29FC00000000 /* MySampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = MySampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DD70E295DFC29FC00000000 /* Meetology.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = Meetology.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DD70E296270FF2700000000 /* AWSCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSCore.framework; path = MySampleApp/Sdk/Aws/AWSCore.framework; sourceTree = "<group>"; };
 		1DD70E2962BA266F00000000 /* UserIdentity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = UserIdentity.storyboard; path = MySampleApp/Demo/UserIdentity/UserIdentity.storyboard; sourceTree = SOURCE_ROOT; };
 		1DD70E296EC9A7FF00000000 /* ContentDelivery.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = ContentDelivery.storyboard; path = MySampleApp/Demo/ContentDelivery/ContentDelivery.storyboard; sourceTree = SOURCE_ROOT; };
@@ -190,20 +190,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B401C9792210F8E700000000 /* App */ = {
+		8454DB701D84650C0012B040 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				1DD70E298F60339100000000 /* AppDelegate.swift */,
-				1DD70E29D11FD16F00000000 /* Images.xcassets */,
-				1DD70E2954C05ADF00000000 /* Launch Screen.storyboard */,
-				1DD70E29ABEABC0B00000000 /* Main.storyboard */,
-				1DD70E29D2DCAB7D00000000 /* MainViewController.swift */,
-				B401C9794921B40300000000 /* SignIn */,
-				B401C97943D54BEB00000000 /* SupportingFiles */,
-				B401C9794C5CF2DB00000000 /* Utility */,
 			);
-			name = App;
-			path = mysampleapp/app;
+			name = Classes;
 			sourceTree = "<group>";
 		};
 		B401C97922F82CD600000000 /* Frameworks */ = {
@@ -240,7 +231,7 @@
 		B401C9792310FF6900000000 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1DD70E295DFC29FC00000000 /* MySampleApp.app */,
+				1DD70E295DFC29FC00000000 /* Meetology.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -268,69 +259,32 @@
 		B401C97931CACEE300000000 /* mainGroup */ = {
 			isa = PBXGroup;
 			children = (
+				B401C979335C1F8700000000 /* Meetology */,
 				B401C9792310FF6900000000 /* Products */,
-				B401C979335C1F8700000000 /* MySampleApp */,
 				B401C97922F82CD600000000 /* Frameworks */,
 			);
 			name = mainGroup;
 			sourceTree = "<group>";
 		};
-		B401C979335C1F8700000000 /* MySampleApp */ = {
+		B401C979335C1F8700000000 /* Meetology */ = {
 			isa = PBXGroup;
 			children = (
-				B401C97947D1D7B700000000 /* AmazonAws */,
-				B401C9792210F8E700000000 /* App */,
-				B401C979A0BA445B00000000 /* Demo */,
-			);
-			name = MySampleApp;
-			path = mysampleapp;
-			sourceTree = "<group>";
-		};
-		B401C97943D54BEB00000000 /* SupportingFiles */ = {
-			isa = PBXGroup;
-			children = (
-				1DD70E291449014E00000000 /* Info.plist */,
-			);
-			name = SupportingFiles;
-			path = mysampleapp/app/supportingfiles;
-			sourceTree = "<group>";
-		};
-		B401C97947D1D7B700000000 /* AmazonAws */ = {
-			isa = PBXGroup;
-			children = (
+				8454DB701D84650C0012B040 /* Classes */,
+				1DD70E298F60339100000000 /* AppDelegate.swift */,
 				1DD70E29F28F096100000000 /* AWSMobileClient.swift */,
-				B401C979F15ED1FB00000000 /* Models */,
-			);
-			name = AmazonAws;
-			path = mysampleapp/amazonaws;
-			sourceTree = "<group>";
-		};
-		B401C9794921B40300000000 /* SignIn */ = {
-			isa = PBXGroup;
-			children = (
+				1DD70E2933B89EEA00000000 /* News.swift */,
+				1DD70E29D11FD16F00000000 /* Images.xcassets */,
+				1DD70E2954C05ADF00000000 /* Launch Screen.storyboard */,
+				1DD70E29ABEABC0B00000000 /* Main.storyboard */,
+				1DD70E29D2DCAB7D00000000 /* MainViewController.swift */,
 				1DD70E299598440800000000 /* SignIn.storyboard */,
 				1DD70E29A30BD02000000000 /* SignInViewController.swift */,
-			);
-			name = SignIn;
-			path = mysampleapp/app/signin;
-			sourceTree = "<group>";
-		};
-		B401C9794C5CF2DB00000000 /* Utility */ = {
-			isa = PBXGroup;
-			children = (
+				1DD70E291449014E00000000 /* Info.plist */,
 				1DD70E294C9B311A00000000 /* UtilityFunctions.swift */,
+				B401C979A0BA445B00000000 /* Demo */,
 			);
-			name = Utility;
-			path = mysampleapp/app/utility;
-			sourceTree = "<group>";
-		};
-		B401C9797C4E0B6000000000 /* NoSQL */ = {
-			isa = PBXGroup;
-			children = (
-				1DD70E2933B89EEA00000000 /* News.swift */,
-			);
-			name = NoSQL;
-			path = mysampleapp/amazonaws/models/nosql;
+			name = Meetology;
+			path = mysampleapp;
 			sourceTree = "<group>";
 		};
 		B401C979A0BA445B00000000 /* Demo */ = {
@@ -407,15 +361,6 @@
 			path = mysampleapp/demo/nosql;
 			sourceTree = "<group>";
 		};
-		B401C979F15ED1FB00000000 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				B401C9797C4E0B6000000000 /* NoSQL */,
-			);
-			name = Models;
-			path = mysampleapp/amazonaws/models;
-			sourceTree = "<group>";
-		};
 		B401C979F37481C300000000 /* CloudLogic */ = {
 			isa = PBXGroup;
 			children = (
@@ -429,9 +374,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E66DC04E0000000000000000 /* MySampleApp */ = {
+		E66DC04E0000000000000000 /* Meetology */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 218C37090000000000000001 /* Build configuration list for PBXNativeTarget "MySampleApp" */;
+			buildConfigurationList = 218C37090000000000000001 /* Build configuration list for PBXNativeTarget "Meetology" */;
 			buildPhases = (
 				E1F174220000000000000001 /* ShellScript */,
 				1870857F0000000000000000 /* Sources */,
@@ -444,9 +389,9 @@
 			);
 			dependencies = (
 			);
-			name = MySampleApp;
+			name = Meetology;
 			productName = MySampleApp;
-			productReference = 1DD70E295DFC29FC00000000 /* MySampleApp.app */;
+			productReference = 1DD70E295DFC29FC00000000 /* Meetology.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -458,7 +403,7 @@
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 			};
-			buildConfigurationList = 218C37090000000000000000 /* Build configuration list for PBXProject "MySampleApp" */;
+			buildConfigurationList = 218C37090000000000000000 /* Build configuration list for PBXProject "Meetology" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -471,7 +416,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E66DC04E0000000000000000 /* MySampleApp */,
+				E66DC04E0000000000000000 /* Meetology */,
 			);
 		};
 /* End PBXProject section */
@@ -617,7 +562,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.amazon.Meetology;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Meetology;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -686,7 +631,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.amazon.Meetology;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Meetology;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -694,7 +639,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		218C37090000000000000000 /* Build configuration list for PBXProject "MySampleApp" */ = {
+		218C37090000000000000000 /* Build configuration list for PBXProject "Meetology" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4952437346F3E10800000000 /* Debug */,
@@ -703,7 +648,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		218C37090000000000000001 /* Build configuration list for PBXNativeTarget "MySampleApp" */ = {
+		218C37090000000000000001 /* Build configuration list for PBXNativeTarget "Meetology" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4952437346F3E10800000001 /* Debug */,
