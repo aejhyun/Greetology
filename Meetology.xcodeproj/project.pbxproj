@@ -14,7 +14,11 @@
 		8454DB801D8468720012B040 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454DB7E1D8468720012B040 /* MainViewController.swift */; };
 		8454DB841D8468BF0012B040 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454DB811D8468BF0012B040 /* Launch Screen.storyboard */; };
 		8454DB851D8468BF0012B040 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454DB821D8468BF0012B040 /* Main.storyboard */; };
-		8454DB861D8468BF0012B040 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454DB831D8468BF0012B040 /* SignIn.storyboard */; };
+		8454DB8A1D846BF90012B040 /* LoggedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454DB891D846BF90012B040 /* LoggedInViewController.swift */; };
+		8454DB8C1D846C100012B040 /* LogInAndSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454DB8B1D846C100012B040 /* LogInAndSignUpViewController.swift */; };
+		8454DB8E1D846C310012B040 /* AWSCognitoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454DB8D1D846C310012B040 /* AWSCognitoManager.swift */; };
+		8454DB901D8471270012B040 /* LogInAndSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454DB8F1D8471270012B040 /* LogInAndSignUp.storyboard */; };
+		8454DB921D84725D0012B040 /* ViewControllerSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454DB911D84725D0012B040 /* ViewControllerSetter.swift */; };
 		E7A30F040A6338E800000000 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E2985F9578D00000000 /* AddressBook.framework */; };
 		E7A30F0418F3C7E400000000 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E29EBE4B59D00000000 /* Foundation.framework */; };
 		E7A30F041DDD363000000000 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E2986DE25E300000000 /* GoogleUtilities.framework */; };
@@ -154,7 +158,11 @@
 		8454DB7E1D8468720012B040 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = MySampleApp/Code/MainViewController.swift; sourceTree = SOURCE_ROOT; };
 		8454DB811D8468BF0012B040 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "MySampleApp/Storyboards/Launch Screen.storyboard"; sourceTree = SOURCE_ROOT; };
 		8454DB821D8468BF0012B040 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = MySampleApp/Storyboards/Main.storyboard; sourceTree = SOURCE_ROOT; };
-		8454DB831D8468BF0012B040 /* SignIn.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SignIn.storyboard; path = MySampleApp/Storyboards/SignIn.storyboard; sourceTree = SOURCE_ROOT; };
+		8454DB891D846BF90012B040 /* LoggedInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoggedInViewController.swift; path = MySampleApp/Code/LoggedInViewController.swift; sourceTree = SOURCE_ROOT; };
+		8454DB8B1D846C100012B040 /* LogInAndSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInAndSignUpViewController.swift; path = MySampleApp/Code/LogInAndSignUpViewController.swift; sourceTree = SOURCE_ROOT; };
+		8454DB8D1D846C310012B040 /* AWSCognitoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AWSCognitoManager.swift; path = MySampleApp/Code/AWSCognitoManager.swift; sourceTree = SOURCE_ROOT; };
+		8454DB8F1D8471270012B040 /* LogInAndSignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LogInAndSignUp.storyboard; path = MySampleApp/Storyboards/LogInAndSignUp.storyboard; sourceTree = SOURCE_ROOT; };
+		8454DB911D84725D0012B040 /* ViewControllerSetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerSetter.swift; path = MySampleApp/Code/ViewControllerSetter.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +203,7 @@
 		8454DB701D84650C0012B040 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8454DB911D84725D0012B040 /* ViewControllerSetter.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -271,16 +280,19 @@
 		B401C979335C1F8700000000 /* Meetology */ = {
 			isa = PBXGroup;
 			children = (
+				8454DB7D1D8468720012B040 /* AppDelegate.swift */,
 				8454DB701D84650C0012B040 /* Classes */,
 				8454DB791D8468290012B040 /* UtilityFunctions.swift */,
 				1DD70E29F28F096100000000 /* AWSMobileClient.swift */,
 				8454DB771D8467F70012B040 /* CurrentUser.swift */,
-				8454DB7D1D8468720012B040 /* AppDelegate.swift */,
 				8454DB7E1D8468720012B040 /* MainViewController.swift */,
 				1DD70E2933B89EEA00000000 /* News.swift */,
+				8454DB8D1D846C310012B040 /* AWSCognitoManager.swift */,
+				8454DB891D846BF90012B040 /* LoggedInViewController.swift */,
+				8454DB8B1D846C100012B040 /* LogInAndSignUpViewController.swift */,
 				8454DB811D8468BF0012B040 /* Launch Screen.storyboard */,
 				8454DB821D8468BF0012B040 /* Main.storyboard */,
-				8454DB831D8468BF0012B040 /* SignIn.storyboard */,
+				8454DB8F1D8471270012B040 /* LogInAndSignUp.storyboard */,
 				1DD70E29D11FD16F00000000 /* Images.xcassets */,
 				8454DB7B1D84684E0012B040 /* SignInViewController.swift */,
 				1DD70E291449014E00000000 /* Info.plist */,
@@ -433,13 +445,13 @@
 				E7A30F0474A10E1800000000 /* UserSettings.storyboard in Resources */,
 				E7A30F049E1C688E00000000 /* CloudLogic.storyboard in Resources */,
 				E7A30F04DE2A9B1B00000000 /* UserIdentity.storyboard in Resources */,
-				8454DB861D8468BF0012B040 /* SignIn.storyboard in Resources */,
 				E7A30F04E82BACCF00000000 /* NoSQLDatabase.storyboard in Resources */,
 				8454DB851D8468BF0012B040 /* Main.storyboard in Resources */,
 				E7A30F04502D0A5700000000 /* ContentDelivery.storyboard in Resources */,
 				E7A30F0452EA7E1300000000 /* UserDataStorage.storyboard in Resources */,
 				E7A30F0452C76AD000000000 /* Images.xcassets in Resources */,
 				8454DB841D8468BF0012B040 /* Launch Screen.storyboard in Resources */,
+				8454DB901D8471270012B040 /* LogInAndSignUp.storyboard in Resources */,
 				E7A30F04C9E63EF800000000 /* UserFiles.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,6 +498,7 @@
 				E7A30F04E66AAB2E00000000 /* UserFilesViewController.swift in Sources */,
 				E7A30F04D72FE5D100000000 /* NoSQLTableListViewController.swift in Sources */,
 				E7A30F046582389400000000 /* NoSQLTableFactory.swift in Sources */,
+				8454DB921D84725D0012B040 /* ViewControllerSetter.swift in Sources */,
 				E7A30F045D14ABCE00000000 /* NewsTable.swift in Sources */,
 				E7A30F048C5BAFF900000000 /* UserDataStorageViewController.swift in Sources */,
 				E7A30F044BEACB9F00000000 /* News.swift in Sources */,
@@ -493,8 +506,10 @@
 				E7A30F046392F5E800000000 /* ColorThemeSettings.swift in Sources */,
 				E7A30F04CA62FAF700000000 /* NoSQLSampleDataGenerator.swift in Sources */,
 				E7A30F0465C1F7EB00000000 /* NoSQLTableViewController.swift in Sources */,
+				8454DB8E1D846C310012B040 /* AWSCognitoManager.swift in Sources */,
 				E7A30F041E09C3EE00000000 /* AppAnalyticsViewController.swift in Sources */,
 				E7A30F04D2C443A100000000 /* NoSQLQueryResultViewController.swift in Sources */,
+				8454DB8A1D846BF90012B040 /* LoggedInViewController.swift in Sources */,
 				E7A30F04F7831A1300000000 /* UserSettingsViewController.swift in Sources */,
 				8454DB7A1D8468290012B040 /* UtilityFunctions.swift in Sources */,
 				E7A30F04D1D7EE7E00000000 /* CloudLogicViewController.swift in Sources */,
@@ -502,6 +517,7 @@
 				E7A30F046A4D1FEB00000000 /* UserIdentityViewController.swift in Sources */,
 				8454DB781D8467F70012B040 /* CurrentUser.swift in Sources */,
 				8454DB7C1D84684E0012B040 /* SignInViewController.swift in Sources */,
+				8454DB8C1D846C100012B040 /* LogInAndSignUpViewController.swift in Sources */,
 				E7A30F04D2ADFBF600000000 /* AWSMobileClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
