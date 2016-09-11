@@ -203,9 +203,19 @@
 		8454DB701D84650C0012B040 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8454DB771D8467F70012B040 /* CurrentUser.swift */,
 				8454DB911D84725D0012B040 /* ViewControllerSetter.swift */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		845F17991D851D79005969BC /* ViewController Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8454DB891D846BF90012B040 /* LoggedInViewController.swift */,
+				8454DB8B1D846C100012B040 /* LogInAndSignUpViewController.swift */,
+			);
+			name = "ViewController Classes";
 			sourceTree = "<group>";
 		};
 		B401C97922F82CD600000000 /* Frameworks */ = {
@@ -281,15 +291,13 @@
 			isa = PBXGroup;
 			children = (
 				8454DB7D1D8468720012B040 /* AppDelegate.swift */,
-				8454DB701D84650C0012B040 /* Classes */,
 				8454DB791D8468290012B040 /* UtilityFunctions.swift */,
 				1DD70E29F28F096100000000 /* AWSMobileClient.swift */,
-				8454DB771D8467F70012B040 /* CurrentUser.swift */,
+				8454DB8D1D846C310012B040 /* AWSCognitoManager.swift */,
+				8454DB701D84650C0012B040 /* Classes */,
+				845F17991D851D79005969BC /* ViewController Classes */,
 				8454DB7E1D8468720012B040 /* MainViewController.swift */,
 				1DD70E2933B89EEA00000000 /* News.swift */,
-				8454DB8D1D846C310012B040 /* AWSCognitoManager.swift */,
-				8454DB891D846BF90012B040 /* LoggedInViewController.swift */,
-				8454DB8B1D846C100012B040 /* LogInAndSignUpViewController.swift */,
 				8454DB811D8468BF0012B040 /* Launch Screen.storyboard */,
 				8454DB821D8468BF0012B040 /* Main.storyboard */,
 				8454DB8F1D8471270012B040 /* LogInAndSignUp.storyboard */,

@@ -14,6 +14,7 @@ import AWSDynamoDB
 class LoggedInViewController: UIViewController {
   
     let currentUser = CurrentUser.sharedInstance
+    let setter: ViewControllerSetter = ViewControllerSetter.sharedInstance
     let cognitoManager = AWSCognitoManager.sharedInstance
     
     let AWSSampleDynamoDBTableName = "DynamoDB-OM-SwiftSample"
@@ -27,11 +28,7 @@ class LoggedInViewController: UIViewController {
  
     }
     
-    func setLogInAndSignUpViewController() {
-        let storyboard = UIStoryboard(name: "LogInAndSignUp", bundle: nil)
-        let logInAndSignUpViewController = storyboard.instantiateViewControllerWithIdentifier("LogInAndSignUpViewController")
-        self.presentViewController(logInAndSignUpViewController, animated: true, completion: nil)
-    }
+
 
     @IBAction func setBannerButtonTapped(sender: AnyObject) {
 //        let currentLocation = Location()
@@ -44,7 +41,7 @@ class LoggedInViewController: UIViewController {
     @IBAction func logoutButtonTapped(sender: AnyObject) {
         if (currentUser.loggedIn()) {
             currentUser.logOut({ (result, error) in
-                //self.setLogInAndSignUpViewController()
+                self.setter.setLogInAndSignUpViewController(self)
                 
             })
             print("Logout Successful: )");
