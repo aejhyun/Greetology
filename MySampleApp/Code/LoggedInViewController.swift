@@ -27,7 +27,12 @@ class LoggedInViewController: UIViewController {
  
     }
     
+    @IBAction func testingButtonTapped(sender: AnyObject) {
+ 
 
+        
+        
+    }
 
     @IBAction func setBannerButtonTapped(sender: AnyObject) {
 //        let currentLocation = Location()
@@ -39,11 +44,12 @@ class LoggedInViewController: UIViewController {
     
     @IBAction func logoutButtonTapped(sender: AnyObject) {
         if (manager.userIsLoggedIn()) {
-            manager.logOutUser({ (result, error) in
-                self.dismissViewControllerAnimated(true, completion: nil)
+            manager.handleLogOut({ (loggedOutSuccessfully) in
+                if loggedOutSuccessfully {
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                }
             })
             print("Logout Successful: )");
-
         } else {
             assert(false)
         }

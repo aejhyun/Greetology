@@ -33,21 +33,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Logged in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDB-nv-4Tm">
-                                <rect key="frame" x="204" y="318" width="76" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDQ-J3-8gD">
-                                <rect key="frame" x="295" y="369" width="52" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDQ-J3-8gD">
+                                <rect key="frame" x="274" y="285" width="52" height="30"/>
                                 <state key="normal" title="Log out"/>
                                 <connections>
                                     <action selector="logoutButtonTapped:" destination="esP-UE-Yas" eventType="touchUpInside" id="yGR-ee-3Do"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUK-5b-4mF">
+                                <rect key="frame" x="250" y="323" width="100" height="30"/>
+                                <state key="normal" title="Testing Button"/>
+                                <connections>
+                                    <action selector="testingButtonTapped:" destination="esP-UE-Yas" eventType="touchUpInside" id="hfP-Th-bXM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZDQ-J3-8gD" firstAttribute="centerX" secondItem="n9j-6L-Z7d" secondAttribute="centerX" id="IBg-Xj-5m1"/>
+                            <constraint firstItem="ZDQ-J3-8gD" firstAttribute="centerY" secondItem="n9j-6L-Z7d" secondAttribute="centerY" id="JBR-ad-XaY"/>
+                            <constraint firstItem="zUK-5b-4mF" firstAttribute="centerX" secondItem="ZDQ-J3-8gD" secondAttribute="centerX" id="UFn-fK-BmN"/>
+                            <constraint firstItem="zUK-5b-4mF" firstAttribute="top" secondItem="ZDQ-J3-8gD" secondAttribute="bottom" constant="8" id="ohM-k3-0uf"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bBB-o5-QVd"/>
                 </viewController>

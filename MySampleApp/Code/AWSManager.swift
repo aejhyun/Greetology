@@ -8,12 +8,14 @@
 
 import Foundation
 import UIKit
+import AWSCognito
 import AWSMobileHubHelper
 import FBSDKLoginKit
 
 class AWSManager: CloudManagerProtocol {
     
     static let sharedInstance: AWSManager = AWSManager()
+    let cognito: AWSCognito = AWSCognito.defaultCognito()
     var delegate: AWSLogInObserverDelegate?
     
     var didSignInObserver: AnyObject!
@@ -31,29 +33,45 @@ class AWSManager: CloudManagerProtocol {
         return AWSIdentityManager.defaultIdentityManager().loggedIn
     }
     
-    func logOutUser(completionHandler: (result: AnyObject?, error: NSError?) -> Void) {
+    func handleLogOut(completionHandler: (loggedOutSuccessfully: Bool) -> Void) {
         AWSIdentityManager.defaultIdentityManager().logoutWithCompletionHandler({(result: AnyObject?, error: NSError?) -> Void in
-            completionHandler(result: result, error: error)
+            if error == nil {
+                completionHandler(loggedOutSuccessfully: true)
+            }
+            print(error)
         })
     }
     
-    func handleFacebookLogIn(completionHandler: (logInSuccessful: Bool) -> Void) {
-        handleLogInWithSignInProvider(AWSFacebookSignInProvider.sharedInstance()) { (signInProviderLogInSuccessful) in
-            if signInProviderLogInSuccessful {
-                completionHandler(logInSuccessful: true)
+    func handleFacebookLogIn(completionHandler: (loggedInSuccessfully: Bool) -> Void) {
+        handleLogInWithSignInProvider(AWSFacebookSignInProvider.sharedInstance()) { (signInProviderLoggedInSuccessfully) in
+            if signInProviderLoggedInSuccessfully {
+                completionHandler(loggedInSuccessfully: true)
             }
         }
     }
     
-    private func handleLogInWithSignInProvider(signInProvider: AWSSignInProvider, completionHandler: (signInProviderLogInSuccessful: Bool) -> Void) {
+    private func handleLogInWithSignInProvider(signInProvider: AWSSignInProvider, completionHandler: (signInProviderLoggedInSuccessfully: Bool) -> Void) {
         AWSIdentityManager.defaultIdentityManager().loginWithSignInProvider(signInProvider, completionHandler: {(result: AnyObject?, error: NSError?) -> Void in
             if error == nil {
-                completionHandler(signInProviderLogInSuccessful: true)
+                completionHandler(signInProviderLoggedInSuccessfully: true)
             }
             print("result = \(result), error = \(error)")
         })
     }
     
+    func saveUserSettings(dataSetName: String, userSettings: [String: String], completionHandler: (userSettingsSavedSuccessfuly: Bool) -> Void) {
+        let dataSet: AWSCognitoDataset = cognito.openOrCreateDataset(dataSetName)
+        for (key, value) in userSettings {
+            dataSet.setString(value, forKey: key)
+        }
+        dataSet.synchronize().continueWithExceptionCheckingBlock({(result: AnyObject?, error: NSError?) -> Void in
+            if error == nil {
+                completionHandler(userSettingsSavedSuccessfuly: true)
+            } else {
+                print("saveSettings AWS task error: \(error!.localizedDescription)")
+            }
+        })
+    }
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(didSignInObserver)

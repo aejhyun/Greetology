@@ -23,8 +23,8 @@ class LogInAndSignUpViewController: UIViewController, AWSLogInObserverDelegate {
     }
  
     @IBAction func facebookButtonTapped(sender: AnyObject) {
-        manager.handleFacebookLogIn { (facebookLogInSuccessful) in
-            if facebookLogInSuccessful {
+        manager.handleFacebookLogIn { (loggedInSuccessfully) in
+            if loggedInSuccessfully {
                 
             }
         }
