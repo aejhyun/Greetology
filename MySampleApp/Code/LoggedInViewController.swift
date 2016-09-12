@@ -42,22 +42,12 @@ class LoggedInViewController: UIViewController {
         if (currentUser.loggedIn()) {
             currentUser.logOut({ (result, error) in
                 self.setter.setLogInAndSignUpViewController(self)
-                
             })
             print("Logout Successful: )");
-            
-            
+
         } else {
             assert(false)
         }
-    }
-    
-    func handleLogout() {
-        
-        
-        
-        
-        
     }
 
 }
