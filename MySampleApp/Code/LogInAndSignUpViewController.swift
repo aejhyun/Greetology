@@ -12,23 +12,18 @@ import FBSDKLoginKit
 
 class LogInAndSignUpViewController: UIViewController, AWSLogInObserverDelegate {
     
-    var didSignInObserver: AnyObject!
-    var signOutObserver: AnyObject!
-    let manager = AWSManager.sharedInstance
-    
+    let manager: CloudManagerProtocol = AWSManager.sharedInstance
+    let aWSManager: AWSManager = AWSManager.sharedInstance
+    let setter: ViewControllerSetter = ViewControllerSetter.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        manager.delegate = self
-    
-        didSignInObserver =  NSNotificationCenter.defaultCenter().addObserverForName(AWSIdentityManagerDidSignInNotification, object: AWSIdentityManager.defaultIdentityManager(), queue: NSOperationQueue.mainQueue(), usingBlock: {(note: NSNotification) -> Void in
-            
-            })
+        aWSManager.delegate = self
         
     }
  
     @IBAction func facebookButtonTapped(sender: AnyObject) {
-        manager.handleFacebookLogin { (facebookLogInSuccessful) in
+        manager.handleFacebookLogIn { (facebookLogInSuccessful) in
             if facebookLogInSuccessful {
                 
             }
@@ -37,17 +32,10 @@ class LogInAndSignUpViewController: UIViewController, AWSLogInObserverDelegate {
 
     //AWSLogInObserverDelegate function
     func AWSLogInSuccessful() -> Void {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("LoggedInViewController")
-        self.presentViewController(vc, animated: true, completion: nil)
-
-        
+        setter.setLoggedInViewController(self)
     }
     
     
-    deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(didSignInObserver)
-    }
     
 
     

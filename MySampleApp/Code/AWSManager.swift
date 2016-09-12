@@ -11,7 +11,7 @@ import UIKit
 import AWSMobileHubHelper
 import FBSDKLoginKit
 
-class AWSManager: CloudProtocol {
+class AWSManager: CloudManagerProtocol {
     
     static let sharedInstance: AWSManager = AWSManager()
     var delegate: AWSLogInObserverDelegate?
@@ -19,21 +19,25 @@ class AWSManager: CloudProtocol {
     var didSignInObserver: AnyObject!
     
     init() {
-        NSNotificationCenter.defaultCenter().addObserverForName(AWSIdentityManagerDidSignInNotification, object: AWSIdentityManager.defaultIdentityManager(), queue: NSOperationQueue.mainQueue(), usingBlock: {(note: NSNotification) -> Void in
+        
+        didSignInObserver = NSNotificationCenter.defaultCenter().addObserverForName(AWSIdentityManagerDidSignInNotification, object: AWSIdentityManager.defaultIdentityManager(), queue: NSOperationQueue.mainQueue(), usingBlock: {(note: NSNotification) -> Void in
             
-            print("hello")
             self.delegate?.AWSLogInSuccessful()
         })
         AWSFacebookSignInProvider.sharedInstance().setPermissions(["public_profile"]);
     }
     
-    //Ask Steve
-    func didSignIn(completionHandler: (logInSuccessful: Bool) -> Void) {
-        
-
+    func userIsLoggedIn() -> Bool {
+        return AWSIdentityManager.defaultIdentityManager().loggedIn
     }
     
-    func handleFacebookLogin(completionHandler: (logInSuccessful: Bool) -> Void) {
+    func logOutUser(completionHandler: (result: AnyObject?, error: NSError?) -> Void) {
+        AWSIdentityManager.defaultIdentityManager().logoutWithCompletionHandler({(result: AnyObject?, error: NSError?) -> Void in
+            completionHandler(result: result, error: error)
+        })
+    }
+    
+    func handleFacebookLogIn(completionHandler: (logInSuccessful: Bool) -> Void) {
         handleLogInWithSignInProvider(AWSFacebookSignInProvider.sharedInstance()) { (signInProviderLogInSuccessful) in
             if signInProviderLogInSuccessful {
                 completionHandler(logInSuccessful: true)
@@ -50,4 +54,13 @@ class AWSManager: CloudProtocol {
         })
     }
     
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(didSignInObserver)
+    }
+    
+}
+
+protocol AWSLogInObserverDelegate {
+    func AWSLogInSuccessful() -> Void
 }

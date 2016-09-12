@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8454DB781D8467F70012B040 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454DB771D8467F70012B040 /* CurrentUser.swift */; };
 		8454DB7A1D8468290012B040 /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454DB791D8468290012B040 /* UtilityFunctions.swift */; };
 		8454DB7C1D84684E0012B040 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454DB7B1D84684E0012B040 /* SignInViewController.swift */; };
 		8454DB7F1D8468720012B040 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454DB7D1D8468720012B040 /* AppDelegate.swift */; };
@@ -16,13 +15,10 @@
 		8454DB851D8468BF0012B040 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454DB821D8468BF0012B040 /* Main.storyboard */; };
 		8454DB8A1D846BF90012B040 /* LoggedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454DB891D846BF90012B040 /* LoggedInViewController.swift */; };
 		8454DB8C1D846C100012B040 /* LogInAndSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454DB8B1D846C100012B040 /* LogInAndSignUpViewController.swift */; };
-		8454DB8E1D846C310012B040 /* AWSCognitoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454DB8D1D846C310012B040 /* AWSCognitoManager.swift */; };
 		8454DB901D8471270012B040 /* LogInAndSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454DB8F1D8471270012B040 /* LogInAndSignUp.storyboard */; };
 		8454DB921D84725D0012B040 /* ViewControllerSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454DB911D84725D0012B040 /* ViewControllerSetter.swift */; };
-		845F179B1D8529F7005969BC /* CloudManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F179A1D8529F7005969BC /* CloudManager.swift */; };
 		845F179D1D852A2B005969BC /* AWSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F179C1D852A2B005969BC /* AWSManager.swift */; };
-		845F179F1D852A9D005969BC /* CloudProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F179E1D852A9D005969BC /* CloudProtocol.swift */; };
-		845F17A31D85A45C005969BC /* AWSLogInObserverDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F17A21D85A45C005969BC /* AWSLogInObserverDelegate.swift */; };
+		845F179F1D852A9D005969BC /* CloudManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F179E1D852A9D005969BC /* CloudManagerProtocol.swift */; };
 		E7A30F040A6338E800000000 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E2985F9578D00000000 /* AddressBook.framework */; };
 		E7A30F0418F3C7E400000000 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E29EBE4B59D00000000 /* Foundation.framework */; };
 		E7A30F041DDD363000000000 /* GoogleUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E2986DE25E300000000 /* GoogleUtilities.framework */; };
@@ -155,7 +151,6 @@
 		1DD70E29F321B82A00000000 /* UserFiles.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = UserFiles.storyboard; path = MySampleApp/Demo/UserFiles/UserFiles.storyboard; sourceTree = SOURCE_ROOT; };
 		1DD70E29F3436DA800000000 /* AWSMobileHubHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSMobileHubHelper.framework; path = MySampleApp/AmazonAws/AWSMobileHubHelper.framework; sourceTree = "<group>"; };
 		1DD70E29FEDB666C00000000 /* UserDataStorage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = UserDataStorage.storyboard; path = MySampleApp/Demo/UserDataStorage/UserDataStorage.storyboard; sourceTree = SOURCE_ROOT; };
-		8454DB771D8467F70012B040 /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CurrentUser.swift; path = MySampleApp/Code/CurrentUser.swift; sourceTree = SOURCE_ROOT; };
 		8454DB791D8468290012B040 /* UtilityFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UtilityFunctions.swift; path = MySampleApp/Code/UtilityFunctions.swift; sourceTree = SOURCE_ROOT; };
 		8454DB7B1D84684E0012B040 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = MySampleApp/Code/SignInViewController.swift; sourceTree = SOURCE_ROOT; };
 		8454DB7D1D8468720012B040 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = MySampleApp/Code/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
@@ -164,13 +159,10 @@
 		8454DB821D8468BF0012B040 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = MySampleApp/Storyboards/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		8454DB891D846BF90012B040 /* LoggedInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoggedInViewController.swift; path = MySampleApp/Code/LoggedInViewController.swift; sourceTree = SOURCE_ROOT; };
 		8454DB8B1D846C100012B040 /* LogInAndSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInAndSignUpViewController.swift; path = MySampleApp/Code/LogInAndSignUpViewController.swift; sourceTree = SOURCE_ROOT; };
-		8454DB8D1D846C310012B040 /* AWSCognitoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AWSCognitoManager.swift; path = MySampleApp/Code/AWSCognitoManager.swift; sourceTree = SOURCE_ROOT; };
 		8454DB8F1D8471270012B040 /* LogInAndSignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LogInAndSignUp.storyboard; path = MySampleApp/Storyboards/LogInAndSignUp.storyboard; sourceTree = SOURCE_ROOT; };
 		8454DB911D84725D0012B040 /* ViewControllerSetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerSetter.swift; path = MySampleApp/Code/ViewControllerSetter.swift; sourceTree = SOURCE_ROOT; };
-		845F179A1D8529F7005969BC /* CloudManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudManager.swift; path = MySampleApp/Code/CloudManager.swift; sourceTree = SOURCE_ROOT; };
 		845F179C1D852A2B005969BC /* AWSManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AWSManager.swift; path = MySampleApp/Code/AWSManager.swift; sourceTree = SOURCE_ROOT; };
-		845F179E1D852A9D005969BC /* CloudProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudProtocol.swift; path = MySampleApp/Code/CloudProtocol.swift; sourceTree = SOURCE_ROOT; };
-		845F17A21D85A45C005969BC /* AWSLogInObserverDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AWSLogInObserverDelegate.swift; path = MySampleApp/Code/AWSLogInObserverDelegate.swift; sourceTree = SOURCE_ROOT; };
+		845F179E1D852A9D005969BC /* CloudManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudManagerProtocol.swift; path = MySampleApp/Code/CloudManagerProtocol.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,13 +203,9 @@
 		8454DB701D84650C0012B040 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				845F17A21D85A45C005969BC /* AWSLogInObserverDelegate.swift */,
-				8454DB8D1D846C310012B040 /* AWSCognitoManager.swift */,
-				845F179A1D8529F7005969BC /* CloudManager.swift */,
-				845F179E1D852A9D005969BC /* CloudProtocol.swift */,
-				845F179C1D852A2B005969BC /* AWSManager.swift */,
-				8454DB771D8467F70012B040 /* CurrentUser.swift */,
 				8454DB911D84725D0012B040 /* ViewControllerSetter.swift */,
+				845F179E1D852A9D005969BC /* CloudManagerProtocol.swift */,
+				845F179C1D852A2B005969BC /* AWSManager.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -225,8 +213,8 @@
 		845F17991D851D79005969BC /* ViewController Classes */ = {
 			isa = PBXGroup;
 			children = (
-				8454DB891D846BF90012B040 /* LoggedInViewController.swift */,
 				8454DB8B1D846C100012B040 /* LogInAndSignUpViewController.swift */,
+				8454DB891D846BF90012B040 /* LoggedInViewController.swift */,
 			);
 			name = "ViewController Classes";
 			sourceTree = "<group>";
@@ -519,9 +507,7 @@
 				E7A30F04D72FE5D100000000 /* NoSQLTableListViewController.swift in Sources */,
 				E7A30F046582389400000000 /* NoSQLTableFactory.swift in Sources */,
 				8454DB921D84725D0012B040 /* ViewControllerSetter.swift in Sources */,
-				845F179F1D852A9D005969BC /* CloudProtocol.swift in Sources */,
-				845F17A31D85A45C005969BC /* AWSLogInObserverDelegate.swift in Sources */,
-				845F179B1D8529F7005969BC /* CloudManager.swift in Sources */,
+				845F179F1D852A9D005969BC /* CloudManagerProtocol.swift in Sources */,
 				E7A30F045D14ABCE00000000 /* NewsTable.swift in Sources */,
 				E7A30F048C5BAFF900000000 /* UserDataStorageViewController.swift in Sources */,
 				E7A30F044BEACB9F00000000 /* News.swift in Sources */,
@@ -529,7 +515,6 @@
 				E7A30F046392F5E800000000 /* ColorThemeSettings.swift in Sources */,
 				E7A30F04CA62FAF700000000 /* NoSQLSampleDataGenerator.swift in Sources */,
 				E7A30F0465C1F7EB00000000 /* NoSQLTableViewController.swift in Sources */,
-				8454DB8E1D846C310012B040 /* AWSCognitoManager.swift in Sources */,
 				E7A30F041E09C3EE00000000 /* AppAnalyticsViewController.swift in Sources */,
 				E7A30F04D2C443A100000000 /* NoSQLQueryResultViewController.swift in Sources */,
 				8454DB8A1D846BF90012B040 /* LoggedInViewController.swift in Sources */,
@@ -539,7 +524,6 @@
 				845F179D1D852A2B005969BC /* AWSManager.swift in Sources */,
 				E7A30F043A3A403000000000 /* NoSQLModelHelpers.swift in Sources */,
 				E7A30F046A4D1FEB00000000 /* UserIdentityViewController.swift in Sources */,
-				8454DB781D8467F70012B040 /* CurrentUser.swift in Sources */,
 				8454DB7C1D84684E0012B040 /* SignInViewController.swift in Sources */,
 				8454DB8C1D846C100012B040 /* LogInAndSignUpViewController.swift in Sources */,
 				E7A30F04D2ADFBF600000000 /* AWSMobileClient.swift in Sources */,

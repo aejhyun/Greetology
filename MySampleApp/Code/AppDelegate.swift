@@ -17,12 +17,12 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let setter: ViewControllerSetter = ViewControllerSetter.sharedInstance
-    let currentUser: CurrentUser = CurrentUser.sharedInstance
+    let manager: CloudManagerProtocol = AWSManager.sharedInstance
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         let didFinishLaunching = AWSMobileClient.sharedInstance.didFinishLaunching(application, withOptions: launchOptions)
 
-        if currentUser.loggedIn() {
+        if manager.userIsLoggedIn() {
             setter.setLoggedInViewControllerInAppDelegate()
         } else {
             setter.setLogInAndSignUpViewControllerInAppDelegate()

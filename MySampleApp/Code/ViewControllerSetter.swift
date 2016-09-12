@@ -25,6 +25,10 @@ class ViewControllerSetter: UIViewController {
         setViewController("LogInAndSignUp", viewControllerID: "LogInAndSignUpViewController", presentingViewController: presentingViewController)
     }
     
+    func setLoggedInViewController(presentingViewController: UIViewController) {
+        setViewController("Main", viewControllerID: "LoggedInViewController", presentingViewController: presentingViewController)
+    }
+    
     private func instantiateViewController(storyboardName: String, viewControllerID: String) -> UIViewController{
         let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
         let instantiatedViewController = storyboard.instantiateViewControllerWithIdentifier(viewControllerID)
