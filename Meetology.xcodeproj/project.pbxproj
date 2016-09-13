@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		841798471D876EF70023E7B5 /* DynamoDBTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841798461D876EF70023E7B5 /* DynamoDBTable.swift */; };
 		8454DB7A1D8468290012B040 /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454DB791D8468290012B040 /* UtilityFunctions.swift */; };
 		8454DB7C1D84684E0012B040 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454DB7B1D84684E0012B040 /* SignInViewController.swift */; };
 		8454DB7F1D8468720012B040 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454DB7D1D8468720012B040 /* AppDelegate.swift */; };
@@ -151,6 +152,7 @@
 		1DD70E29F321B82A00000000 /* UserFiles.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = UserFiles.storyboard; path = MySampleApp/Demo/UserFiles/UserFiles.storyboard; sourceTree = SOURCE_ROOT; };
 		1DD70E29F3436DA800000000 /* AWSMobileHubHelper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSMobileHubHelper.framework; path = MySampleApp/AmazonAws/AWSMobileHubHelper.framework; sourceTree = "<group>"; };
 		1DD70E29FEDB666C00000000 /* UserDataStorage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = UserDataStorage.storyboard; path = MySampleApp/Demo/UserDataStorage/UserDataStorage.storyboard; sourceTree = SOURCE_ROOT; };
+		841798461D876EF70023E7B5 /* DynamoDBTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DynamoDBTable.swift; path = MySampleApp/Code/DynamoDBTable.swift; sourceTree = SOURCE_ROOT; };
 		8454DB791D8468290012B040 /* UtilityFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UtilityFunctions.swift; path = MySampleApp/Code/UtilityFunctions.swift; sourceTree = SOURCE_ROOT; };
 		8454DB7B1D84684E0012B040 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = MySampleApp/Code/SignInViewController.swift; sourceTree = SOURCE_ROOT; };
 		8454DB7D1D8468720012B040 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = MySampleApp/Code/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
@@ -204,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				8454DB911D84725D0012B040 /* ViewControllerSetter.swift */,
+				841798461D876EF70023E7B5 /* DynamoDBTable.swift */,
 				845F179E1D852A9D005969BC /* CloudManagerProtocol.swift */,
 				845F179C1D852A2B005969BC /* AWSManager.swift */,
 			);
@@ -297,7 +300,6 @@
 				8454DB701D84650C0012B040 /* Classes */,
 				845F17991D851D79005969BC /* ViewController Classes */,
 				8454DB7E1D8468720012B040 /* MainViewController.swift */,
-				1DD70E2933B89EEA00000000 /* News.swift */,
 				8454DB811D8468BF0012B040 /* Launch Screen.storyboard */,
 				8454DB821D8468BF0012B040 /* Main.storyboard */,
 				8454DB8F1D8471270012B040 /* LogInAndSignUp.storyboard */,
@@ -371,6 +373,7 @@
 		B401C979DA2C4D0B00000000 /* NoSQL */ = {
 			isa = PBXGroup;
 			children = (
+				1DD70E2933B89EEA00000000 /* News.swift */,
 				1DD70E29B3B6377F00000000 /* NewsTable.swift */,
 				1DD70E299F10774500000000 /* NoSQLDatabase.storyboard */,
 				1DD70E29ED7C6B4300000000 /* NoSQLModelHelpers.swift */,
@@ -520,6 +523,7 @@
 				8454DB8A1D846BF90012B040 /* LoggedInViewController.swift in Sources */,
 				E7A30F04F7831A1300000000 /* UserSettingsViewController.swift in Sources */,
 				8454DB7A1D8468290012B040 /* UtilityFunctions.swift in Sources */,
+				841798471D876EF70023E7B5 /* DynamoDBTable.swift in Sources */,
 				E7A30F04D1D7EE7E00000000 /* CloudLogicViewController.swift in Sources */,
 				845F179D1D852A2B005969BC /* AWSManager.swift in Sources */,
 				E7A30F043A3A403000000000 /* NoSQLModelHelpers.swift in Sources */,

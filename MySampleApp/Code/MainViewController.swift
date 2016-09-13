@@ -186,7 +186,6 @@ class MainViewController: UITableViewController {
                 self.navigationController!.popToRootViewControllerAnimated(false)
                 self.setupRightBarButtonItem()
             })
-            // print("Logout Successful: \(signInProvider.getDisplayName)");
         } else {
             assert(false)
         }

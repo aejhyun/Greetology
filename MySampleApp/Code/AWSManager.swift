@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import AWSCognito
+import AWSDynamoDB
 import AWSMobileHubHelper
 import FBSDKLoginKit
 
@@ -16,6 +17,7 @@ class AWSManager: CloudManagerProtocol {
     
     static let sharedInstance: AWSManager = AWSManager()
     let cognito: AWSCognito = AWSCognito.defaultCognito()
+    let dynamoDB = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
     var delegate: AWSLogInObserverDelegate?
     
     var didSignInObserver: AnyObject!
@@ -31,6 +33,10 @@ class AWSManager: CloudManagerProtocol {
     
     func userIsLoggedIn() -> Bool {
         return AWSIdentityManager.defaultIdentityManager().loggedIn
+    }
+    
+    func getUserId() -> String {
+        return AWSIdentityManager.defaultIdentityManager().identityId!
     }
     
     func handleLogOut(completionHandler: (loggedOutSuccessfully: Bool) -> Void) {
@@ -72,6 +78,36 @@ class AWSManager: CloudManagerProtocol {
             }
         })
     }
+    
+    
+    func saveDataInDatabase(tableName: String, data: [String: AnyObject?], completionHandler: (savedDataSuccessfully: Bool) -> Void) {
+        let table = DynamoDBTable(data: data)
+        dynamoDB.save(table, completionHandler: {(error: NSError?) -> Void in
+            if error == nil {
+                completionHandler(savedDataSuccessfully: true)
+            }
+            print("save data in database error: \(error)")
+        })
+    }
+    
+
+    
+    func getItemWithCompletionHandler(completionHandler: (response: AWSDynamoDBObjectModel?, error: NSError?) -> Void) {
+        let objectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
+        objectMapper.load(News.self, hashKey: AWSIdentityManager.defaultIdentityManager().identityId!, rangeKey: "demo-articleId-500000", completionHandler: {(response: AWSDynamoDBObjectModel?, error: NSError?) -> Void in
+            dispatch_async(dispatch_get_main_queue(), {
+                completionHandler(response: response, error: error)
+            })
+        })
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(didSignInObserver)

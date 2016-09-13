@@ -21,10 +21,6 @@ class ViewControllerSetter: UIViewController {
         setViewControllerInAppDelegate("Main", viewControllerID: "LoggedInViewController")
     }
     
-    func setLogInAndSignUpViewController(presentingViewController: UIViewController) {
-        setViewController("LogInAndSignUp", viewControllerID: "LogInAndSignUpViewController", presentingViewController: presentingViewController)
-    }
-    
     func setLoggedInViewController(presentingViewController: UIViewController) {
         setViewController("Main", viewControllerID: "LoggedInViewController", presentingViewController: presentingViewController)
     }

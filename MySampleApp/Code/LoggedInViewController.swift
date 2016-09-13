@@ -22,15 +22,47 @@ class LoggedInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
   
-        AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()        
+        
         
  
     }
     
     @IBAction func testingButtonTapped(sender: AnyObject) {
- 
-
         
+        var userId: AnyObject = manager.getUserId()
+        var articleId: AnyObject = "24324"
+        var author: AnyObject = "Bob Kim"
+        
+        
+        
+        let data: [String: AnyObject] = ["userId": userId, "articleId": articleId, "author": author]
+        manager.saveDataInDatabase("News", data: data) { (savedDataSuccessfully) in
+            if savedDataSuccessfully {
+                print("hurrrrr")
+            }
+        }
+        
+//        AWSManager().insertSampleDataWithCompletionHandler { (errors) in
+//            
+//        }
+        
+//        AWSManager().getItemWithCompletionHandler { (response, error) in
+//            if let response = response {
+//                let dictionaryValue = response.dictionaryValue
+//                print(dictionaryValue)
+//                
+//                let value = Mirror(reflecting: dictionaryValue["test"])
+//                print(value)
+//                let v = dictionaryValue["test"] as! [String]
+//                print(v)
+//                
+//            }
+//        
+//        }
+        
+//        manager.insertSampleDataWithCompletionHandler { (errors) in
+//            print("YASS")
+//        }
         
     }
 

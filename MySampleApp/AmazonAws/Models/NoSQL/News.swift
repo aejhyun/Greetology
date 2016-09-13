@@ -25,6 +25,9 @@ class News: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     var _creationDate: NSNumber?
     var _keywords: Set<String>?
     var _title: String?
+    var test: [String]?
+    var test1: [Int]?
+
     
     class func dynamoDBTableName() -> String {
 
