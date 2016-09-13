@@ -11,27 +11,16 @@ import AWSDynamoDB
 
 class DynamoDBTable: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
-    var userId: AnyObject?
-    var articleId: AnyObject?
-    var author: AnyObject?
-    
-    init(items: [String: AnyObject?]) {
-        super.init()
-        
-        for(key, value) in items {
-            if key == "userId" {
-                userId = value
-            } else if key == "articleId" {
-                articleId = value
-            } else if key == "author" {
-                author = value
-            }
-        }
-    }
-    
-    required init!(coder: NSCoder!) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    var _userId: AnyObject?
+    var _articleId: AnyObject?
+    var _author: AnyObject?
+    var _category: String?
+    var _content: String?
+    var _creationDate: NSNumber?
+    var _keywords: Set<String>?
+    var _title: String?
+    var test: [String]?
+    var test1: [Int]?
     
     class func dynamoDBTableName() -> String {
         
@@ -48,14 +37,14 @@ class DynamoDBTable: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
         return "_articleId"
     }
     
-    func setValueForKeyForDynamoDBTable(data: [String: AnyObject]) {
+    func setValueForKeyForTable(data: [String: AnyObject?]) {
         for(key, value) in data {
             if key == "userId" {
-                userId = value
+                _userId = value
             } else if key == "articleId" {
-                articleId = value
+                _articleId = value
             } else if key == "author" {
-                author = value
+                _author = value
             }
         }
     }

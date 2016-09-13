@@ -16,6 +16,7 @@ import FBSDKLoginKit
 class AWSManager: CloudManagerProtocol {
     
     static let sharedInstance: AWSManager = AWSManager()
+    let identityManager = AWSIdentityManager.defaultIdentityManager()
     let cognito: AWSCognito = AWSCognito.defaultCognito()
     let dynamoDB = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
     var delegate: AWSLogInObserverDelegate?
@@ -32,77 +33,79 @@ class AWSManager: CloudManagerProtocol {
     }
     
     func userIsLoggedIn() -> Bool {
-        return AWSIdentityManager.defaultIdentityManager().loggedIn
+        return identityManager.loggedIn
     }
     
     func getUserId() -> String {
-        return AWSIdentityManager.defaultIdentityManager().identityId!
+        return identityManager.identityId!
     }
     
-    func handleLogOut(completionHandler: (loggedOutSuccessfully: Bool) -> Void) {
-        AWSIdentityManager.defaultIdentityManager().logoutWithCompletionHandler({(result: AnyObject?, error: NSError?) -> Void in
-            if error == nil {
-                completionHandler(loggedOutSuccessfully: true)
-            }
-            print(error)
+    func handleLogOut(completionHandler: (result: AnyObject?, error: NSError?) -> Void) {
+        identityManager.logoutWithCompletionHandler({(result: AnyObject?, error: NSError?) -> Void in
+            completionHandler(result: result, error: error)
         })
     }
     
-    func handleFacebookLogIn(completionHandler: (loggedInSuccessfully: Bool) -> Void) {
-        handleLogInWithSignInProvider(AWSFacebookSignInProvider.sharedInstance()) { (signInProviderLoggedInSuccessfully) in
-            if signInProviderLoggedInSuccessfully {
-                completionHandler(loggedInSuccessfully: true)
-            }
+    func handleFacebookLogIn(completionHandler: (result: AnyObject?, error: NSError?) -> Void) {
+        handleLogInWithSignInProvider(AWSFacebookSignInProvider.sharedInstance()) { (result, error) in
+            completionHandler(result: result, error: error)
         }
     }
     
-    private func handleLogInWithSignInProvider(signInProvider: AWSSignInProvider, completionHandler: (signInProviderLoggedInSuccessfully: Bool) -> Void) {
-        AWSIdentityManager.defaultIdentityManager().loginWithSignInProvider(signInProvider, completionHandler: {(result: AnyObject?, error: NSError?) -> Void in
-            if error == nil {
-                completionHandler(signInProviderLoggedInSuccessfully: true)
-            }
-            print("result = \(result), error = \(error)")
+    private func handleLogInWithSignInProvider(signInProvider: AWSSignInProvider, completionHandler: (result: AnyObject?, error: NSError?) -> Void) {
+        identityManager.loginWithSignInProvider(signInProvider, completionHandler: {(result: AnyObject?, error: NSError?) -> Void in
+            completionHandler(result: result, error: error)
         })
     }
     
-    func saveUserSettings(dataSetName: String, userSettings: [String: String], completionHandler: (userSettingsSavedSuccessfuly: Bool) -> Void) {
+    func saveUserSettings(dataSetName: String, userSettings: [String: String], completionHandler: (result: AnyObject?, error: NSError?) -> Void) {
         let dataSet: AWSCognitoDataset = cognito.openOrCreateDataset(dataSetName)
         for (key, value) in userSettings {
             dataSet.setString(value, forKey: key)
         }
         dataSet.synchronize().continueWithExceptionCheckingBlock({(result: AnyObject?, error: NSError?) -> Void in
-            if error == nil {
-                completionHandler(userSettingsSavedSuccessfuly: true)
-            } else {
-                print("saveSettings AWS task error: \(error!.localizedDescription)")
-            }
+            completionHandler(result: result, error: error)
         })
     }
     
-    
-    
-    
-    
-    func saveItemsInDatabase(tableName: String, items: [String: AnyObject?], completionHandler: (savedItemsSuccessfully: Bool) -> Void) {
-        let table = DynamoDBTable(items: items)
+    func saveItemsInDatabase(tableName: String, items: [String: AnyObject?], completionHandler: (error: NSError?) -> Void) {
+        let table = DynamoDBTable()
+        table.setValueForKeyForTable(items)
         dynamoDB.save(table, completionHandler: {(error: NSError?) -> Void in
-            if error == nil {
-                completionHandler(savedItemsSuccessfully: true)
-            }
-            print("save data in database error: \(error)")
+            completionHandler(error: error)
         })
     }
     
-    func getItemFromDatabase(tableName: String, hashKey: String, rangeKey: String, completionHandler: (gotItemSuccessfully: Bool, item: AWSDynamoDBObjectModel?) -> Void) {
+    func getItemFromDatabase(tableName: String, hashKey: String, rangeKey: String, completionHandler: (item: AWSDynamoDBObjectModel?, error: NSError?) -> Void) {
         dynamoDB.load(DynamoDBTable.self, hashKey: hashKey, rangeKey: rangeKey) { (item: AWSDynamoDBObjectModel?, error: NSError?) in
-            if error == nil {
-                completionHandler(gotItemSuccessfully: true, item: item)
-            }
-            print("get data in database error: \(error)")
+            completionHandler(item: item, error: error)
         }
-   
     }
-
+    
+    func scanDatabase(tableName: String, scanLimit: Int, completionHandler: (response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void) {
+        let scanExpression = AWSDynamoDBScanExpression()
+        scanExpression.limit = scanLimit
+        dynamoDB.scan(DynamoDBTable.self, expression: scanExpression, completionHandler: {(response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void in
+            dispatch_async(dispatch_get_main_queue(), {
+                completionHandler(response: response, error: error)
+            })
+        })
+    }
+    
+    
+    
+    
+    func scanWithCompletionHandler(completionHandler: (response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void) {
+        let objectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
+        let scanExpression = AWSDynamoDBScanExpression()
+        scanExpression.limit = 5
+        
+        objectMapper.scan(News.self, expression: scanExpression, completionHandler: {(response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void in
+            dispatch_async(dispatch_get_main_queue(), {
+                completionHandler(response: response, error: error)
+            })
+        })
+    }
     
     
     

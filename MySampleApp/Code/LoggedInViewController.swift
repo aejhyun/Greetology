@@ -17,7 +17,7 @@ class LoggedInViewController: UIViewController {
     let manager: CloudManagerProtocol = AWSManager.sharedInstance
     
     let AWSSampleDynamoDBTableName = "DynamoDB-OM-SwiftSample"
-
+    var output: AWSDynamoDBPaginatedOutput?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,16 +27,28 @@ class LoggedInViewController: UIViewController {
  
     }
     
+    @IBAction func pagiationButtonTapped(sender: AnyObject) {
+        
+        output?.loadNextPage()
+        print(output?.items)
+        
+        
+    }
     @IBAction func testingButtonTapped(sender: AnyObject) {
         
         var userId: AnyObject = manager.getUserId()
         var articleId: AnyObject = "24324"
         var author: AnyObject = "Bob Kim"
         
-        manager.getItemFromDatabase("meetology-mobilehub-873546679-News", hashKey: manager.getUserId(), rangeKey: "demo-articleId-154888") { (gotItemSuccessfully, item) in
-            if gotItemSuccessfully {
-               
-            }
+//        AWSManager().scanWithCompletionHandler({ (response, error) in
+//            self.output = response
+//        })
+//            
+
+        
+        manager.scanDatabase("", scanLimit: 5) { (response, error) in
+            self.output = response
+
         }
         
 //        let data: [String: AnyObject] = ["userId": userId, "articleId": articleId, "author": author]
@@ -59,14 +71,11 @@ class LoggedInViewController: UIViewController {
     
     @IBAction func logoutButtonTapped(sender: AnyObject) {
         if (manager.userIsLoggedIn()) {
-            manager.handleLogOut({ (loggedOutSuccessfully) in
-                if loggedOutSuccessfully {
+            manager.handleLogOut({ (result, error) in
+                if error == nil {
                     self.dismissViewControllerAnimated(true, completion: nil)
                 }
             })
-            print("Logout Successful: )");
-        } else {
-            assert(false)
         }
     }
 
