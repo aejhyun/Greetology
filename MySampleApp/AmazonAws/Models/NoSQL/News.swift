@@ -15,7 +15,7 @@ import Foundation
 import UIKit
 import AWSDynamoDB
 
-class News: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
+class News: AWSDynamoDBObjectModel, AWSDynamoDBModeling, AWSDynamoDBTable {
     
     var _userId: String?
     var _articleId: String?
@@ -42,6 +42,10 @@ class News: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     class func rangeKeyAttribute() -> String {
 
         return "_articleId"
+    }
+    
+    func setValueForKeyForTable(data: [String: AnyObject?]) {
+        
     }
     
     override class func JSONKeyPathsByPropertyKey() -> [NSObject : AnyObject] {

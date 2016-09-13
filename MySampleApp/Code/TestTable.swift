@@ -9,7 +9,7 @@
 import Foundation
 import AWSDynamoDB
 
-class DynamoDBTable: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
+class TestTable: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     
     var _userId: AnyObject?
     var _articleId: AnyObject?
@@ -37,8 +37,8 @@ class DynamoDBTable: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
         return "_articleId"
     }
     
-    func setValueForKeyForTable(data: [String: AnyObject?]) {
-        for(key, value) in data {
+    func setItemForKeyForTable(items: [String: AnyObject?]) {
+        for(key, value) in items {
             if key == "userId" {
                 _userId = value
             } else if key == "articleId" {

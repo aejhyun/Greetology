@@ -16,6 +16,7 @@ import FBSDKLoginKit
 class AWSManager: CloudManagerProtocol {
     
     static let sharedInstance: AWSManager = AWSManager()
+    let tableFactory = AWSDynamoDBTableFactory.sharedInstance
     let identityManager = AWSIdentityManager.defaultIdentityManager()
     let cognito: AWSCognito = AWSCognito.defaultCognito()
     let dynamoDB = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
@@ -69,45 +70,47 @@ class AWSManager: CloudManagerProtocol {
     }
     
     func saveItemsInDatabase(tableName: String, items: [String: AnyObject?], completionHandler: (error: NSError?) -> Void) {
-        let table = DynamoDBTable()
-        table.setValueForKeyForTable(items)
+        let table = TestTable()
+        table.setItemForKeyForTable(items)
         dynamoDB.save(table, completionHandler: {(error: NSError?) -> Void in
             completionHandler(error: error)
         })
     }
     
     func getItemFromDatabase(tableName: String, hashKey: String, rangeKey: String, completionHandler: (item: AWSDynamoDBObjectModel?, error: NSError?) -> Void) {
-        dynamoDB.load(DynamoDBTable.self, hashKey: hashKey, rangeKey: rangeKey) { (item: AWSDynamoDBObjectModel?, error: NSError?) in
+        
+        dynamoDB.load(TestTable.self, hashKey: hashKey, rangeKey: rangeKey) { (item: AWSDynamoDBObjectModel?, error: NSError?) in
             completionHandler(item: item, error: error)
         }
+    }
+    
+    func updateItemInDatabase(tableName: String, items: [String: AnyObject?], completionHandler: (error: NSError?) -> Void) {
+        let table = TestTable()
+        table.setItemForKeyForTable(items)
+        
+    }
+    
+    func queryWithPartitionKey(className: String, partitionKey: String, completionHandler: (response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void) {
+        let queryExpression = AWSDynamoDBQueryExpression()
+        queryExpression.keyConditionExpression = "#userId = :userId"
+        queryExpression.expressionAttributeNames = ["#userId": "userId",]
+        queryExpression.expressionAttributeValues = [":userId": partitionKey,]
+        
+        dynamoDB.query(TestTable.self, expression: queryExpression) { (response: AWSDynamoDBPaginatedOutput?, error: NSError?) in
+            completionHandler(response: response, error: error)
+        }
+        
     }
     
     func scanDatabase(tableName: String, scanLimit: Int, completionHandler: (response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void) {
         let scanExpression = AWSDynamoDBScanExpression()
         scanExpression.limit = scanLimit
-        dynamoDB.scan(DynamoDBTable.self, expression: scanExpression, completionHandler: {(response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void in
+        dynamoDB.scan(TestTable.self, expression: scanExpression, completionHandler: {(response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void in
             dispatch_async(dispatch_get_main_queue(), {
                 completionHandler(response: response, error: error)
             })
         })
     }
-    
-    
-    
-    
-    func scanWithCompletionHandler(completionHandler: (response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void) {
-        let objectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
-        let scanExpression = AWSDynamoDBScanExpression()
-        scanExpression.limit = 5
-        
-        objectMapper.scan(News.self, expression: scanExpression, completionHandler: {(response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void in
-            dispatch_async(dispatch_get_main_queue(), {
-                completionHandler(response: response, error: error)
-            })
-        })
-    }
-    
-    
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(didSignInObserver)

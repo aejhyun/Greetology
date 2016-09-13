@@ -36,29 +36,20 @@ class LoggedInViewController: UIViewController {
     }
     @IBAction func testingButtonTapped(sender: AnyObject) {
         
-        var userId: AnyObject = manager.getUserId()
-        var articleId: AnyObject = "24324"
-        var author: AnyObject = "Bob Kim"
-        
-//        AWSManager().scanWithCompletionHandler({ (response, error) in
-//            self.output = response
-//        })
-//            
-
+        let userId: AnyObject = manager.getUserId()
+        let articleId: AnyObject = "24325"
+        let author: AnyObject = "Joe Kim"
         
         manager.scanDatabase("", scanLimit: 5) { (response, error) in
             self.output = response
-
         }
         
-//        let data: [String: AnyObject] = ["userId": userId, "articleId": articleId, "author": author]
-//        manager.saveDataInDatabase("News", data: data) { (savedDataSuccessfully) in
-//            if savedDataSuccessfully {
-//                print("hurrrrr")
-//            }
-//        }
-        
-
+        let items: [String: AnyObject] = ["userId": userId, "articleId": articleId, "author": author]
+        manager.saveItemsInDatabase("yo", items: items) { (error) in
+            if error == nil {
+                
+            }
+        }
     }
 
     @IBAction func setBannerButtonTapped(sender: AnyObject) {

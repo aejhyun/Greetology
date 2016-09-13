@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -34,35 +35,69 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDQ-J3-8gD">
-                                <rect key="frame" x="274" y="285" width="52" height="30"/>
+                                <rect key="frame" x="528" y="550" width="52" height="30"/>
                                 <state key="normal" title="Log out"/>
                                 <connections>
                                     <action selector="logoutButtonTapped:" destination="esP-UE-Yas" eventType="touchUpInside" id="yGR-ee-3Do"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUK-5b-4mF">
-                                <rect key="frame" x="250" y="323" width="100" height="30"/>
-                                <state key="normal" title="Testing Button"/>
-                                <connections>
-                                    <action selector="testingButtonTapped:" destination="esP-UE-Yas" eventType="touchUpInside" id="hfP-Th-bXM"/>
-                                </connections>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Goj-Dz-VXc">
+                                <rect key="frame" x="276" y="139" width="48" height="30"/>
+                                <state key="normal" title="Search"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DVg-3u-etF">
-                                <rect key="frame" x="244" y="361" width="113" height="30"/>
-                                <state key="normal" title="Pagiation Button"/>
-                                <connections>
-                                    <action selector="pagiationButtonTapped:" destination="esP-UE-Yas" eventType="touchUpInside" id="cds-v7-CIS"/>
-                                </connections>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Keywords" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bgF-s4-ANC">
+                                <rect key="frame" x="20" y="356" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Banner text" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6wo-SZ-hEV">
+                                <rect key="frame" x="20" y="318" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="seH-wP-Zo8">
+                                <rect key="frame" x="259" y="394" width="83" height="30"/>
+                                <state key="normal" title="Post Banner"/>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Keywords" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V4l-L8-hN7">
+                                <rect key="frame" x="20" y="101" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search around you" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPd-QS-ze9">
+                                <rect key="frame" x="228" y="72" width="144" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post a banner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBz-Bn-2hN">
+                                <rect key="frame" x="247" y="289" width="106" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="DVg-3u-etF" firstAttribute="centerX" secondItem="zUK-5b-4mF" secondAttribute="centerX" id="01X-h2-jVz"/>
-                            <constraint firstItem="ZDQ-J3-8gD" firstAttribute="centerX" secondItem="n9j-6L-Z7d" secondAttribute="centerX" id="IBg-Xj-5m1"/>
-                            <constraint firstItem="ZDQ-J3-8gD" firstAttribute="centerY" secondItem="n9j-6L-Z7d" secondAttribute="centerY" id="JBR-ad-XaY"/>
-                            <constraint firstItem="DVg-3u-etF" firstAttribute="top" secondItem="zUK-5b-4mF" secondAttribute="bottom" constant="8" id="QaC-2c-l4j"/>
-                            <constraint firstItem="zUK-5b-4mF" firstAttribute="centerX" secondItem="ZDQ-J3-8gD" secondAttribute="centerX" id="UFn-fK-BmN"/>
-                            <constraint firstItem="zUK-5b-4mF" firstAttribute="top" secondItem="ZDQ-J3-8gD" secondAttribute="bottom" constant="8" id="ohM-k3-0uf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZDQ-J3-8gD" secondAttribute="trailing" id="28F-tZ-ZIu"/>
+                            <constraint firstItem="bgF-s4-ANC" firstAttribute="top" secondItem="6wo-SZ-hEV" secondAttribute="bottom" constant="8" id="34I-mR-iQd"/>
+                            <constraint firstItem="V4l-L8-hN7" firstAttribute="leading" secondItem="n9j-6L-Z7d" secondAttribute="leadingMargin" id="8FT-gw-55c"/>
+                            <constraint firstItem="Goj-Dz-VXc" firstAttribute="centerX" secondItem="V4l-L8-hN7" secondAttribute="centerX" id="AHh-ei-TAC"/>
+                            <constraint firstItem="gBz-Bn-2hN" firstAttribute="centerX" secondItem="n9j-6L-Z7d" secondAttribute="centerX" id="OT9-oP-zdF"/>
+                            <constraint firstItem="dPd-QS-ze9" firstAttribute="centerX" secondItem="n9j-6L-Z7d" secondAttribute="centerX" id="a0v-bX-Exq"/>
+                            <constraint firstItem="V4l-L8-hN7" firstAttribute="top" secondItem="dPd-QS-ze9" secondAttribute="bottom" constant="8" id="aZ1-GW-xgH"/>
+                            <constraint firstItem="seH-wP-Zo8" firstAttribute="top" secondItem="bgF-s4-ANC" secondAttribute="bottom" constant="8" id="auv-MR-fYE"/>
+                            <constraint firstItem="bgF-s4-ANC" firstAttribute="leading" secondItem="n9j-6L-Z7d" secondAttribute="leadingMargin" id="bL2-Sj-GZl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6wo-SZ-hEV" secondAttribute="trailing" id="gFJ-l6-zUS"/>
+                            <constraint firstItem="gBz-Bn-2hN" firstAttribute="centerY" secondItem="n9j-6L-Z7d" secondAttribute="centerY" id="hCf-N7-wpK"/>
+                            <constraint firstItem="Goj-Dz-VXc" firstAttribute="top" secondItem="V4l-L8-hN7" secondAttribute="bottom" constant="8" id="nCP-K7-XrU"/>
+                            <constraint firstItem="wEN-Ia-LJv" firstAttribute="top" secondItem="ZDQ-J3-8gD" secondAttribute="bottom" constant="20" id="pPj-Yn-3mo"/>
+                            <constraint firstItem="dPd-QS-ze9" firstAttribute="top" secondItem="YWo-bT-l5d" secondAttribute="bottom" constant="8" id="pW6-5s-eas"/>
+                            <constraint firstItem="seH-wP-Zo8" firstAttribute="centerX" secondItem="bgF-s4-ANC" secondAttribute="centerX" id="pob-Wt-4QO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bgF-s4-ANC" secondAttribute="trailing" id="qoi-T9-yZ3"/>
+                            <constraint firstItem="6wo-SZ-hEV" firstAttribute="top" secondItem="gBz-Bn-2hN" secondAttribute="bottom" constant="8" id="s0J-xH-yr8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="V4l-L8-hN7" secondAttribute="trailing" id="vni-Vs-dhu"/>
+                            <constraint firstItem="6wo-SZ-hEV" firstAttribute="leading" secondItem="n9j-6L-Z7d" secondAttribute="leadingMargin" id="xBW-A8-pFW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bBB-o5-QVd"/>
