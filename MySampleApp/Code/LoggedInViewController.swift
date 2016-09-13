@@ -13,45 +13,31 @@ import AWSDynamoDB
 
 class LoggedInViewController: UIViewController {
   
+    @IBOutlet weak var searchKeywords: UITextField!
+    
     let setter: ViewControllerSetter = ViewControllerSetter.sharedInstance
     let manager: CloudManagerProtocol = AWSManager.sharedInstance
-    
     let AWSSampleDynamoDBTableName = "DynamoDB-OM-SwiftSample"
     var output: AWSDynamoDBPaginatedOutput?
     
     override func viewDidLoad() {
         super.viewDidLoad()
   
-        
-        
- 
-    }
-    
-    @IBAction func pagiationButtonTapped(sender: AnyObject) {
-        
-        output?.loadNextPage()
-        print(output?.items)
-        
-        
-    }
-    @IBAction func testingButtonTapped(sender: AnyObject) {
-        
-        let userId: AnyObject = manager.getUserId()
-        let articleId: AnyObject = "24325"
-        let author: AnyObject = "Joe Kim"
-        
-        manager.scanDatabase("", scanLimit: 5) { (response, error) in
-            self.output = response
-        }
-        
-        let items: [String: AnyObject] = ["userId": userId, "articleId": articleId, "author": author]
-        manager.saveItemsInDatabase("yo", items: items) { (error) in
-            if error == nil {
-                
-            }
-        }
     }
 
+    @IBAction func searchButtonTapped(sender: AnyObject) {
+        
+        
+        
+        
+    }
+
+    @IBAction func postButtonTapped(sender: AnyObject) {
+        
+        
+        
+        
+    }
     @IBAction func setBannerButtonTapped(sender: AnyObject) {
 //        let currentLocation = Location()
 //        let currentTime = Time().getCurrentTime()
