@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AWSDynamoDB
 
 protocol CloudManagerProtocol {
     
@@ -18,7 +19,10 @@ protocol CloudManagerProtocol {
     
     func handleLogOut(completionHandler: (loggedOutSuccessfully: Bool) -> Void)
     
-    func saveDataInDatabase(tableName: String, data: [String: AnyObject?], completionHandler: (savedDataSuccessfully: Bool) -> Void)
+    
+    func saveItemsInDatabase(tableName: String, items: [String: AnyObject?], completionHandler: (savedItemsSuccessfully: Bool) -> Void)
+    
+    func getItemFromDatabase(tableName: String, hashKey: String, rangeKey: String, completionHandler: (gotItemSuccessfully: Bool, item: AWSDynamoDBObjectModel?) -> Void)
     
     
     

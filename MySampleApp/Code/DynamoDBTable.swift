@@ -15,10 +15,10 @@ class DynamoDBTable: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     var articleId: AnyObject?
     var author: AnyObject?
     
-    init(data: [String: AnyObject?]) {
+    init(items: [String: AnyObject?]) {
         super.init()
         
-        for(key, value) in data {
+        for(key, value) in items {
             if key == "userId" {
                 userId = value
             } else if key == "articleId" {

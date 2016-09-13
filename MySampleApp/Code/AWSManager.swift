@@ -80,32 +80,29 @@ class AWSManager: CloudManagerProtocol {
     }
     
     
-    func saveDataInDatabase(tableName: String, data: [String: AnyObject?], completionHandler: (savedDataSuccessfully: Bool) -> Void) {
-        let table = DynamoDBTable(data: data)
+    
+    
+    
+    func saveItemsInDatabase(tableName: String, items: [String: AnyObject?], completionHandler: (savedItemsSuccessfully: Bool) -> Void) {
+        let table = DynamoDBTable(items: items)
         dynamoDB.save(table, completionHandler: {(error: NSError?) -> Void in
             if error == nil {
-                completionHandler(savedDataSuccessfully: true)
+                completionHandler(savedItemsSuccessfully: true)
             }
             print("save data in database error: \(error)")
         })
     }
     
-
-    
-    func getItemWithCompletionHandler(completionHandler: (response: AWSDynamoDBObjectModel?, error: NSError?) -> Void) {
-        let objectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
-        objectMapper.load(News.self, hashKey: AWSIdentityManager.defaultIdentityManager().identityId!, rangeKey: "demo-articleId-500000", completionHandler: {(response: AWSDynamoDBObjectModel?, error: NSError?) -> Void in
-            dispatch_async(dispatch_get_main_queue(), {
-                completionHandler(response: response, error: error)
-            })
-        })
+    func getItemFromDatabase(tableName: String, hashKey: String, rangeKey: String, completionHandler: (gotItemSuccessfully: Bool, item: AWSDynamoDBObjectModel?) -> Void) {
+        dynamoDB.load(DynamoDBTable.self, hashKey: hashKey, rangeKey: rangeKey) { (item: AWSDynamoDBObjectModel?, error: NSError?) in
+            if error == nil {
+                completionHandler(gotItemSuccessfully: true, item: item)
+            }
+            print("get data in database error: \(error)")
+        }
+   
     }
-    
-    
-    
-    
-    
-    
+
     
     
     
