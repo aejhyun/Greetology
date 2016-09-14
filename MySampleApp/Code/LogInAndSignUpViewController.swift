@@ -12,7 +12,7 @@ import FBSDKLoginKit
 
 class LogInAndSignUpViewController: UIViewController, AWSLogInObserverDelegate {
     
-    let manager: CloudManagerProtocol = AWSManager.sharedInstance
+    let manager: BackEndManager = AWSManager.sharedInstance
     let aWSManager: AWSManager = AWSManager.sharedInstance
     let setter: ViewControllerSetter = ViewControllerSetter.sharedInstance
     
@@ -28,8 +28,6 @@ class LogInAndSignUpViewController: UIViewController, AWSLogInObserverDelegate {
                 
             }
         }
-    
-    
     }
 
     //AWSLogInObserverDelegate function

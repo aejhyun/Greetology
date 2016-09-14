@@ -63,7 +63,7 @@
                                 <rect key="frame" x="276" y="215" width="48" height="30"/>
                                 <state key="normal" title="Search"/>
                                 <connections>
-                                    <action selector="searchButtonTapped:" destination="esP-UE-Yas" eventType="touchUpInside" id="i88-e8-VLa"/>
+                                    <action selector="searchButtonTapped:" destination="esP-UE-Yas" eventType="touchUpInside" id="c15-gb-yc3"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Keywords" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bgF-s4-ANC">
@@ -134,7 +134,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="bBB-o5-QVd"/>
                     <connections>
-                        <outlet property="searchKeywords" destination="V4l-L8-hN7" id="zvI-Xs-dP3"/>
+                        <outlet property="searchKeywordsTextField" destination="V4l-L8-hN7" id="7u5-2E-eit"/>
                         <segue destination="42H-gJ-ExA" kind="presentation" id="5tR-xj-nqQ"/>
                     </connections>
                 </viewController>

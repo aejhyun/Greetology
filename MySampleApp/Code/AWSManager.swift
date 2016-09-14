@@ -13,7 +13,7 @@ import AWSDynamoDB
 import AWSMobileHubHelper
 import FBSDKLoginKit
 
-class AWSManager: CloudManagerProtocol {
+class AWSManager: BackEndManager {
     
     static let sharedInstance: AWSManager = AWSManager()
     let tableFactory = AWSDynamoDBTableFactory.sharedInstance
@@ -69,43 +69,71 @@ class AWSManager: CloudManagerProtocol {
         })
     }
     
+    func loadUserSettings(dataSetName: String, completionHandler: (userSettings: AWSCognitoDataset, error: NSError?) -> Void) {
+        let userSettings: AWSCognitoDataset = cognito.openOrCreateDataset(dataSetName)
+        userSettings.synchronize().continueWithExceptionCheckingBlock { (result, error) in
+            completionHandler(userSettings: userSettings, error: error)
+        }
+    }
+    
     func saveItemsInDatabase(tableName: String, items: [String: AnyObject?], completionHandler: (error: NSError?) -> Void) {
-        let table = TestTable()
+        let tableFromFactory = tableFactory.getTable(tableName)
+        guard let table = tableFromFactory where tableFromFactory != nil else {
+            print("Table returned nil")
+            return
+        }
         table.setItemForKeyForTable(items)
-        dynamoDB.save(table, completionHandler: {(error: NSError?) -> Void in
+        dynamoDB.save(table.returnDynamoDBObjectModel(), completionHandler: {(error: NSError?) -> Void in
             completionHandler(error: error)
         })
     }
     
     func getItemFromDatabase(tableName: String, hashKey: String, rangeKey: String, completionHandler: (item: AWSDynamoDBObjectModel?, error: NSError?) -> Void) {
-        
-        dynamoDB.load(TestTable.self, hashKey: hashKey, rangeKey: rangeKey) { (item: AWSDynamoDBObjectModel?, error: NSError?) in
+        let tableFromFactory = tableFactory.getTable(tableName)
+        guard let table = tableFromFactory where tableFromFactory != nil else {
+            print("Table returned nil")
+            return
+        }
+        dynamoDB.load(table.returnAnyClass(), hashKey: hashKey, rangeKey: rangeKey) { (item: AWSDynamoDBObjectModel?, error: NSError?) in
             completionHandler(item: item, error: error)
         }
     }
     
     func updateItemInDatabase(tableName: String, items: [String: AnyObject?], completionHandler: (error: NSError?) -> Void) {
-        let table = TestTable()
-        table.setItemForKeyForTable(items)
+
         
     }
     
-    func queryWithPartitionKey(className: String, partitionKey: String, completionHandler: (response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void) {
+    func queryWithPartitionKeyFromDatabase(tableName: String, partitionKey: String, completionHandler: (response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void) {
+        
+        let tableFromFactory = tableFactory.getTable(tableName)
+        guard let table = tableFromFactory where tableFromFactory != nil else {
+            print("Table returned nil")
+            return
+        }
+        
         let queryExpression = AWSDynamoDBQueryExpression()
         queryExpression.keyConditionExpression = "#userId = :userId"
         queryExpression.expressionAttributeNames = ["#userId": "userId",]
         queryExpression.expressionAttributeValues = [":userId": partitionKey,]
         
-        dynamoDB.query(TestTable.self, expression: queryExpression) { (response: AWSDynamoDBPaginatedOutput?, error: NSError?) in
+        dynamoDB.query(table.returnAnyClass(), expression: queryExpression) { (response: AWSDynamoDBPaginatedOutput?, error: NSError?) in
             completionHandler(response: response, error: error)
         }
-        
     }
     
     func scanDatabase(tableName: String, scanLimit: Int, completionHandler: (response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void) {
+        
+        let tableFromFactory = tableFactory.getTable(tableName)
+        guard let table = tableFromFactory where tableFromFactory != nil else {
+            print("Table returned nil")
+            return
+        }
+        
         let scanExpression = AWSDynamoDBScanExpression()
         scanExpression.limit = scanLimit
-        dynamoDB.scan(TestTable.self, expression: scanExpression, completionHandler: {(response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void in
+        
+        dynamoDB.scan(table.returnAnyClass(), expression: scanExpression, completionHandler: {(response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void in
             dispatch_async(dispatch_get_main_queue(), {
                 completionHandler(response: response, error: error)
             })

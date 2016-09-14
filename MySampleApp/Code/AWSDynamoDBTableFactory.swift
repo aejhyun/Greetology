@@ -13,7 +13,7 @@ class AWSDynamoDBTableFactory {
     
     static let sharedInstance: AWSDynamoDBTableFactory = AWSDynamoDBTableFactory()
     
-    func getTable(tableName: String) -> AWSDynamoDBModeling? {
+    func getTable(tableName: String) -> AWSDynamoDBTable? {
         switch tableName {
         case "News":
             return News()
@@ -24,9 +24,11 @@ class AWSDynamoDBTableFactory {
         }
     }
 
-    
 }
 
 protocol AWSDynamoDBTable {
-    func setValueForKeyForTable(data: [String: AnyObject?])
+    func setItemForKeyForTable(item: [String: AnyObject?])
+    func returnDynamoDBObjectModel() -> AWSDynamoDBObjectModel
+    func returnAnyClass() -> AnyClass
+    
 }

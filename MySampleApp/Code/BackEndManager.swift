@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import AWSCognito
 import AWSDynamoDB
 
-protocol CloudManagerProtocol {
+protocol BackEndManager {
     
     func getUserId() -> String
     
@@ -21,13 +22,12 @@ protocol CloudManagerProtocol {
     
     func saveUserSettings(dataSetName: String, userSettings: [String: String], completionHandler: (result: AnyObject?, error: NSError?) -> Void)
     
+    func loadUserSettings(dataSetName: String, completionHandler: (userSettings: AWSCognitoDataset, error: NSError?) -> Void)
+    
     func saveItemsInDatabase(tableName: String, items: [String: AnyObject?], completionHandler: (error: NSError?) -> Void)
     
     func getItemFromDatabase(tableName: String, hashKey: String, rangeKey: String, completionHandler: (item: AWSDynamoDBObjectModel?, error: NSError?) -> Void)
     
     func scanDatabase(tableName: String, scanLimit: Int, completionHandler: (response: AWSDynamoDBPaginatedOutput?, error: NSError?) -> Void)
 
-    
-    
-    
 }

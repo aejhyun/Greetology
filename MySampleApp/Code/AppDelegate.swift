@@ -17,7 +17,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let setter: ViewControllerSetter = ViewControllerSetter.sharedInstance
-    let manager: CloudManagerProtocol = AWSManager.sharedInstance
+    let manager: BackEndManager = AWSManager.sharedInstance
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         let didFinishLaunching = AWSMobileClient.sharedInstance.didFinishLaunching(application, withOptions: launchOptions)

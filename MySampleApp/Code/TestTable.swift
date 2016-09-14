@@ -9,7 +9,7 @@
 import Foundation
 import AWSDynamoDB
 
-class TestTable: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
+class TestTable: AWSDynamoDBObjectModel, AWSDynamoDBModeling, AWSDynamoDBTable {
     
     var _userId: AnyObject?
     var _articleId: AnyObject?
@@ -47,6 +47,14 @@ class TestTable: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
                 _author = value
             }
         }
+    }
+    
+    func returnDynamoDBObjectModel() -> AWSDynamoDBObjectModel {
+        return self
+    }
+    
+    func returnAnyClass() -> AnyClass {
+        return TestTable.self
     }
     
     override class func JSONKeyPathsByPropertyKey() -> [NSObject : AnyObject] {

@@ -44,8 +44,16 @@ class News: AWSDynamoDBObjectModel, AWSDynamoDBModeling, AWSDynamoDBTable {
         return "_articleId"
     }
     
-    func setValueForKeyForTable(data: [String: AnyObject?]) {
+    func setItemForKeyForTable(data: [String: AnyObject?]) {
         
+    }
+    
+    func returnDynamoDBObjectModel() -> AWSDynamoDBObjectModel {
+        return self
+    }
+    
+    func returnAnyClass() -> AnyClass {
+        return News.self
     }
     
     override class func JSONKeyPathsByPropertyKey() -> [NSObject : AnyObject] {

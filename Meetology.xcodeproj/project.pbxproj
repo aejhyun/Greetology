@@ -19,7 +19,7 @@
 		8454DB901D8471270012B040 /* LogInAndSignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454DB8F1D8471270012B040 /* LogInAndSignUp.storyboard */; };
 		8454DB921D84725D0012B040 /* ViewControllerSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454DB911D84725D0012B040 /* ViewControllerSetter.swift */; };
 		845F179D1D852A2B005969BC /* AWSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F179C1D852A2B005969BC /* AWSManager.swift */; };
-		845F179F1D852A9D005969BC /* CloudManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F179E1D852A9D005969BC /* CloudManagerProtocol.swift */; };
+		845F179F1D852A9D005969BC /* BackEndManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F179E1D852A9D005969BC /* BackEndManager.swift */; };
 		84F22B961D87AC7E00FCF35A /* AWSDynamoDBTableFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F22B951D87AC7D00FCF35A /* AWSDynamoDBTableFactory.swift */; };
 		E7A30F040A6338E800000000 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E2985F9578D00000000 /* AddressBook.framework */; };
 		E7A30F0418F3C7E400000000 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E29EBE4B59D00000000 /* Foundation.framework */; };
@@ -165,7 +165,7 @@
 		8454DB8F1D8471270012B040 /* LogInAndSignUp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LogInAndSignUp.storyboard; path = MySampleApp/Storyboards/LogInAndSignUp.storyboard; sourceTree = SOURCE_ROOT; };
 		8454DB911D84725D0012B040 /* ViewControllerSetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerSetter.swift; path = MySampleApp/Code/ViewControllerSetter.swift; sourceTree = SOURCE_ROOT; };
 		845F179C1D852A2B005969BC /* AWSManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AWSManager.swift; path = MySampleApp/Code/AWSManager.swift; sourceTree = SOURCE_ROOT; };
-		845F179E1D852A9D005969BC /* CloudManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudManagerProtocol.swift; path = MySampleApp/Code/CloudManagerProtocol.swift; sourceTree = SOURCE_ROOT; };
+		845F179E1D852A9D005969BC /* BackEndManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackEndManager.swift; path = MySampleApp/Code/BackEndManager.swift; sourceTree = SOURCE_ROOT; };
 		84F22B951D87AC7D00FCF35A /* AWSDynamoDBTableFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AWSDynamoDBTableFactory.swift; path = MySampleApp/Code/AWSDynamoDBTableFactory.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -209,7 +209,7 @@
 			children = (
 				8454DB911D84725D0012B040 /* ViewControllerSetter.swift */,
 				841798461D876EF70023E7B5 /* TestTable.swift */,
-				845F179E1D852A9D005969BC /* CloudManagerProtocol.swift */,
+				845F179E1D852A9D005969BC /* BackEndManager.swift */,
 				845F179C1D852A2B005969BC /* AWSManager.swift */,
 				84F22B951D87AC7D00FCF35A /* AWSDynamoDBTableFactory.swift */,
 			);
@@ -513,7 +513,7 @@
 				E7A30F04D72FE5D100000000 /* NoSQLTableListViewController.swift in Sources */,
 				E7A30F046582389400000000 /* NoSQLTableFactory.swift in Sources */,
 				8454DB921D84725D0012B040 /* ViewControllerSetter.swift in Sources */,
-				845F179F1D852A9D005969BC /* CloudManagerProtocol.swift in Sources */,
+				845F179F1D852A9D005969BC /* BackEndManager.swift in Sources */,
 				E7A30F045D14ABCE00000000 /* NewsTable.swift in Sources */,
 				E7A30F048C5BAFF900000000 /* UserDataStorageViewController.swift in Sources */,
 				E7A30F044BEACB9F00000000 /* News.swift in Sources */,
